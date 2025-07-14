@@ -1,7 +1,6 @@
 "use client";
 
-import { Button, Card, CardBody, Image, Progress, Chip } from "@heroui/react";
-import Link from "next/link";
+import { Button, Card, CardBody, Image, Chip } from "@heroui/react";
 import Layout from "@/components/Layout";
 import { toast } from "react-hot-toast";
 
@@ -109,7 +108,7 @@ export default function Foundation() {
               Be Comforted
             </p>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Honoring Garry Mapanzure's legacy through meaningful community impact. 
+              Honoring Garry Mapanzure&apos;s legacy through meaningful community impact. 
               Together, we bring comfort, hope, and opportunity to those who need it most.
             </p>
           </div>
@@ -147,7 +146,7 @@ export default function Foundation() {
                 <p>
                   The Munyaradzwe Foundation was established to honor the memory and values of 
                   Garry Mapanzure, embodying his spirit of giving back and supporting those in need. 
-                  "Munyaradzwe" means "be comforted" in Shona, reflecting our commitment to bringing 
+                  &ldquo;Munyaradzwe&rdquo; means &ldquo;be comforted&rdquo; in Shona, reflecting our commitment to bringing 
                   comfort and hope to vulnerable communities.
                 </p>
                 <p>
@@ -156,8 +155,8 @@ export default function Foundation() {
                   healthcare. We believe that everyone deserves dignity, opportunity, and hope.
                 </p>
                 <p>
-                  Through sustainable programs and community partnerships, we're building a legacy 
-                  that extends far beyond charity - we're creating lasting change that empowers 
+                  Through sustainable programs and community partnerships, we&apos;re building a legacy 
+                  that extends far beyond charity - we&apos;re creating lasting change that empowers 
                   communities to thrive.
                 </p>
               </div>
@@ -260,7 +259,7 @@ export default function Foundation() {
               How You Can Help
             </h2>
             <p className="text-xl text-green-700 max-w-3xl mx-auto">
-              Every contribution makes a difference in someone's life.
+              Every contribution makes a difference in someone&apos;s life.
             </p>
           </div>
 
@@ -289,7 +288,7 @@ export default function Foundation() {
                   Volunteer
                 </h3>
                 <p className="text-green-700 mb-6 leading-relaxed">
-                  Share your time and skills with us. Whether it's helping with 
+                  Share your time and skills with us. Whether it&apos;s helping with 
                   programs or administrative tasks, your time is valuable.
                 </p>
                 <Button

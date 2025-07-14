@@ -2,7 +2,6 @@
 
 import { Button, Card, CardBody, Input, Textarea } from "@heroui/react";
 import { Mail, Phone, MapPin, MessageCircle, Clock } from "lucide-react";
-import Link from "next/link";
 import Layout from "@/components/Layout";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
@@ -71,8 +70,8 @@ Message: ${formData.message}
               Get in Touch with African Pride
             </p>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              We're here to help with any questions about our collections, services, or foundation work. 
-              Reach out to us and let's start a conversation.
+              We&apos;re here to help with any questions about our collections, services, or foundation work. 
+              Reach out to us and let&apos;s start a conversation.
             </p>
           </div>
 
@@ -84,7 +83,7 @@ Message: ${formData.message}
                   <MessageCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-syne text-xl font-bold text-zinc-900 mb-4">
-                  Let's Connect
+                  Let&apos;s Connect
                 </h3>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-center gap-2 text-stone-700">
@@ -269,7 +268,7 @@ Message: ${formData.message}
             Ready to Connect?
           </h2>
           <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
-            Let's bring your vision to life. Start the conversation today.
+            Let&apos;s bring your vision to life. Start the conversation today.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

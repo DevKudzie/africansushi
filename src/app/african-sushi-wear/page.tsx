@@ -1,7 +1,7 @@
 "use client";
 
-import { Button, Card, CardBody, Image, Chip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
-import { X, Eye } from "lucide-react";
+import { Button, Card, CardBody, Chip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
+import { Eye } from "lucide-react";
 import Link from "next/link";
 import NextImage from "next/image";
 import Layout from "@/components/Layout";
@@ -10,7 +10,28 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-const products = [
+interface ProductImage {
+  src: string;
+  alt: string;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  price: string;
+  originalPrice: string;
+  image: string;
+  images: ProductImage[];
+  description: string;
+  longDescription: string;
+  sizes: string[];
+  colors: string[];
+  category: string;
+  materials: string;
+  care: string;
+}
+
+const products: Product[] = [
   {
     id: 1,
     name: "Heritage Hoodie - Gold",
@@ -139,23 +160,23 @@ const designers = [
 
 export default function AfricanSushiWear() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [currentProductImages, setCurrentProductImages] = useState<any[]>([]);
+  const [currentProductImages, setCurrentProductImages] = useState<ProductImage[]>([]);
 
-  const openProductDetail = (product: any) => {
+  const openProductDetail = (product: Product) => {
     setSelectedProduct(product);
     onOpen();
   };
 
-  const openLightbox = (product: any, index: number = 0) => {
+  const openLightbox = (product: Product, index: number = 0) => {
     setCurrentProductImages(product.images);
     setLightboxIndex(index);
     setLightboxOpen(true);
   };
 
-  const handleWhatsAppOrder = (product: any) => {
+  const handleWhatsAppOrder = (product: Product) => {
     const message = `Hi! I'm interested in the ${product.name} (${product.price}). Could you please provide more details about sizing, colors, and shipping options?`;
     window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
     toast.success('Redirecting to WhatsApp...');
@@ -288,7 +309,7 @@ export default function AfricanSushiWear() {
               More Launching Soon
             </h3>
             <p className="text-lg text-zinc-600 mb-6 max-w-2xl mx-auto">
-              We're constantly creating new pieces that celebrate African heritage. 
+              We&apos;re constantly creating new pieces that celebrate African heritage. 
               Stay tuned for exciting additions to our collection.
             </p>
             <Button
@@ -321,13 +342,13 @@ export default function AfricanSushiWear() {
                     foundation for a brand that would honor African heritage through contemporary fashion.
                   </p>
                   <p>
-                    "African Sushi Wear" represents the beautiful contradiction of necessity and luxury, 
+                    &ldquo;African Sushi Wear&rdquo; represents the beautiful contradiction of necessity and luxury, 
                     tradition and innovation. Each garment is crafted to tell stories of resilience, 
                     cultural pride, and the journey from struggle to success.
                   </p>
                   <p>
                     Today, every purchase supports the Garikai Munyaradzwe Foundation, ensuring that 
-                    Garry's legacy of giving back continues to touch lives across communities.
+                    Garry&apos;s legacy of giving back continues to touch lives across communities.
                   </p>
                 </div>
               </CardBody>
@@ -362,7 +383,7 @@ export default function AfricanSushiWear() {
             </h2>
             <p className="text-xl text-zinc-700 max-w-3xl mx-auto">
               No vision comes to life in isolation. Meet the talented individuals who helped bring 
-              Garry's dream to reality through their expertise and dedication.
+              Garry&apos;s dream to reality through their expertise and dedication.
             </p>
           </div>
           
@@ -400,7 +421,7 @@ export default function AfricanSushiWear() {
                 <div className="lg:w-2/3">
                   <div className="bg-white border-l-4 border-zinc-900 p-8">
                     <blockquote className="text-lg text-zinc-700 leading-relaxed font-light italic">
-                      "{designer.description}"
+                      &ldquo;{designer.description}&rdquo;
                     </blockquote>
                     
                     {/* Decorative element */}
@@ -633,7 +654,7 @@ export default function AfricanSushiWear() {
                       <div>
                         <h4 className="font-syne font-bold text-zinc-900 mb-2">View More Photos</h4>
                         <div className="flex gap-2">
-                          {selectedProduct.images.slice(0, 3).map((image: any, idx: number) => (
+                          {selectedProduct.images.slice(0, 3).map((image: ProductImage, idx: number) => (
                             <div 
                               key={idx}
                               className="relative w-16 h-16 cursor-pointer border border-zinc-200 hover:border-zinc-400 transition-colors"
@@ -664,7 +685,9 @@ export default function AfricanSushiWear() {
                 <Button 
                   className="bg-zinc-900 text-white font-syne tracking-wide hover:bg-zinc-700 transition-all duration-200 sharp-edges"
                   onPress={() => {
-                    handleWhatsAppOrder(selectedProduct);
+                    if (selectedProduct) {
+                      handleWhatsAppOrder(selectedProduct);
+                    }
                     onClose();
                   }}
                 >

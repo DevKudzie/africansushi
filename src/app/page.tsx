@@ -145,7 +145,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-manrope text-xl text-stone leading-relaxed">
-                  African Pride is more than a brand—it's a <strong>movement</strong> that celebrates African heritage, 
+                  African Pride is more than a brand—it&apos;s a <strong>movement</strong> that celebrates African heritage, 
                   creativity, and the power of giving back. Born from the vision of <em>Garry Mapanzure</em>.
                 </p>
               </div>
@@ -215,7 +215,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             <div className="premium-card sharp-edges p-8 bg-charcoal text-pearl h-80 flex flex-col justify-center">
               <blockquote className="font-syne text-2xl lg:text-3xl font-light mb-6 leading-relaxed italic">
-                "True success is measured not just by what we achieve, but by how many lives we touch along the way."
+                &ldquo;True success is measured not just by what we achieve, but by how many lives we touch along the way.&rdquo;
               </blockquote>
               <cite className="font-manrope text-sm text-pearl/70">— African Pride Philosophy</cite>
             </div>
@@ -225,7 +225,7 @@ export default function Home() {
                 Munyaradzwe <em className="font-manrope">Foundation</em>
               </h3>
               <p className="font-manrope text-stone mb-6 leading-relaxed flex-grow">
-                "<strong>Be comforted</strong>" — Our charity foundation spreads comfort and support to the 
+                &ldquo;<strong>Be comforted</strong>&rdquo; — Our charity foundation spreads comfort and support to the 
                 most vulnerable members of our community.
               </p>
               <Button

@@ -1,7 +1,6 @@
 "use client";
 
-import { Button, Card, CardBody, Image, Chip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
-import { MessageCircle } from "lucide-react";
+import { Button, Card, CardBody, Chip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
 import Link from "next/link";
 import NextImage from "next/image";
 import Layout from "@/components/Layout";
@@ -97,14 +96,14 @@ const fabricCollections = [
 
 export default function Rujeko() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [selectedFabric, setSelectedFabric] = useState<any>(null);
+  const [selectedFabric, setSelectedFabric] = useState<Record<string, any> | null>(null);
 
-  const openFabricDetail = (fabric: any) => {
+  const openFabricDetail = (fabric: Record<string, any>) => {
     setSelectedFabric(fabric);
     onOpen();
   };
 
-  const handleWhatsAppOrder = (fabric: any) => {
+  const handleWhatsAppOrder = (fabric: Record<string, any>) => {
     const message = `Hi! I'm interested in ordering the ${fabric.name} fabric at ${fabric.price}. Please provide more details about availability, minimum order quantities, and shipping.`;
     const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -181,16 +180,16 @@ export default function Rujeko() {
               </h3>
               <p className="text-neutral-800 leading-relaxed mb-4">
                 RUJEKO began as a personal journey—a search for meaning, memory, and connection. 
-                For designer Kiki Mapanzure, fabric is more than material. It's a language that 
+                For designer Kiki Mapanzure, fabric is more than material. It&apos;s a language that 
                 speaks identity, honors ancestry, and imagines a future grounded in pride.
               </p>
               <p className="text-neutral-800 leading-relaxed mb-4">
                 Each RUJEKO textile is layered with symbolism, crafted to be both beautiful 
-                and deeply meaningful. The designs are not random—they are rooted in Zimbabwe's 
+                and deeply meaningful. The designs are not random—they are rooted in Zimbabwe&apos;s 
                 cultural landscape, carefully woven to reflect its richness and diversity.
               </p>
               <p className="text-neutral-800 leading-relaxed">
-                Named after Kiki's late father, RUJEKO means radiance—a fitting symbol for 
+                Named after Kiki&apos;s late father, RUJEKO means radiance—a fitting symbol for 
                 a brand that seeks to shine light on heritage, identity, and belonging.
               </p>
             </div>
@@ -473,7 +472,9 @@ export default function Rujeko() {
                 <Button 
                   className="bg-orange-900 text-white font-syne tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
                   onPress={() => {
-                    handleWhatsAppOrder(selectedFabric);
+                    if (selectedFabric) {
+                      handleWhatsAppOrder(selectedFabric);
+                    }
                     onClose();
                   }}
                 >

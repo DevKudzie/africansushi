@@ -6,7 +6,22 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import { toast } from "react-hot-toast";
 
-const upcomingEvents = [
+interface Event {
+  id: number;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  description: string;
+  image: string;
+  category: string;
+  price: string;
+  capacity: string;
+  highlights: string[];
+  type: "upcoming" | "past";
+}
+
+const upcomingEvents: Event[] = [
   {
     id: 1,
     title: "African Sushi Wear Collection Launch",
@@ -116,7 +131,7 @@ const pastEvents = [
   }
 ];
 
-const handleRSVP = (event: any) => {
+const handleRSVP = (event: Event) => {
   const message = `Hi! I'd like to RSVP for the "${event.title}" event on ${event.date}. Please provide more details about registration and any requirements.`;
   const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
@@ -146,7 +161,7 @@ export default function Events() {
             </p>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
               Join us for exclusive fashion launches, cultural exhibitions, charity galas, 
-              and community outreach events that honor Garry Mapanzure's legacy.
+              and community outreach events that honor Garry Mapanzure&apos;s legacy.
             </p>
           </div>
 
@@ -180,7 +195,7 @@ export default function Events() {
               Upcoming <span className="text-gradient">Events</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Don't miss these exciting upcoming events. RSVP now to secure your spot!
+              Don&apos;t miss these exciting upcoming events. RSVP now to secure your spot!
             </p>
           </div>
 
@@ -281,7 +296,7 @@ export default function Events() {
               Past <span className="text-gradient">Events</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Celebrating our successful events and the impact we've made together
+              Celebrating our successful events and the impact we&apos;ve made together
             </p>
           </div>
 
@@ -380,7 +395,7 @@ export default function Events() {
                 </h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Collection launches, fashion shows, and pop-up stores showcasing 
-                  African Sushi Wear's premium streetwear.
+                  African Sushi Wear&apos;s premium streetwear.
                 </p>
                 <ul className="text-sm text-gray-400 space-y-1">
                   <li>• Collection Launches</li>

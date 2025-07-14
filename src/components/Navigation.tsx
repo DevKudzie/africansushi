@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { 
   Navbar, 
@@ -13,7 +14,7 @@ import {
   NavbarMenuItem,
   Button
 } from "@heroui/react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const navigationItems = [
   { name: "Home", href: "/" },
@@ -91,9 +92,11 @@ export default function Navigation() {
           <Link href="/" className="flex items-center space-x-3">
             {isRujekoPage ? (
               <div className="h-12 flex items-center justify-center ml-4">
-                <img 
+                <Image 
                   src="/images/rujeko-logo.png" 
                   alt="Rujeko" 
+                  width={48}
+                  height={48}
                   className="h-12 w-auto object-contain"
                 />
               </div>
