@@ -186,12 +186,35 @@ export default function AfricanSushiWear() {
     <Layout>
       {/* Hero Section - Enhanced with earthy nude-inspired background */}
       <section className="relative pt-40 pb-20 overflow-hidden">
-        {/* Earthy nude-inspired blurred background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-100 via-neutral-100 to-slate-100">
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-200/40 via-neutral-200/40 to-slate-200/40 backdrop-blur-3xl"></div>
-          <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-stone-300/25 to-neutral-300/25 rounded-full filter blur-3xl opacity-50 -translate-x-16 -translate-y-16"></div>
-          <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-slate-300/25 to-stone-300/25 rounded-full filter blur-3xl opacity-50 translate-x-16"></div>
-          <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-gradient-to-br from-neutral-300/25 to-stone-400/25 rounded-full filter blur-3xl opacity-50 translate-y-16"></div>
+        {/* Multi-layered earthy nude background with glass effect */}
+        <div className="absolute inset-0">
+          {/* Base gradient - warm earthy background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-stone-100 to-neutral-100"></div>
+          
+          {/* Secondary overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-amber-100/60 via-stone-100/70 to-neutral-100/60"></div>
+          
+          {/* Blurred brushstroke elements - much more visible */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-amber-300/70 via-stone-300/60 to-neutral-300/50 rounded-full filter blur-3xl -translate-x-20 -translate-y-20 animate-pulse"></div>
+          
+          <div className="absolute top-32 right-0 w-80 h-80 bg-gradient-to-bl from-stone-400/60 via-amber-300/50 to-neutral-400/55 rounded-full filter blur-3xl translate-x-16 -translate-y-8"></div>
+          
+          <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-gradient-to-tr from-neutral-400/65 via-stone-400/55 to-amber-400/45 rounded-full filter blur-3xl translate-y-20 -translate-x-8"></div>
+          
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-amber-400/50 via-stone-500/60 to-neutral-400/55 rounded-full filter blur-3xl -translate-x-32 -translate-y-16"></div>
+          
+          <div className="absolute bottom-20 right-1/4 w-56 h-56 bg-gradient-to-tl from-stone-500/55 via-neutral-400/45 to-amber-300/50 rounded-full filter blur-3xl translate-x-12 translate-y-8"></div>
+          
+          {/* Additional smaller accent elements */}
+          <div className="absolute top-3/4 left-1/6 w-48 h-48 bg-gradient-to-br from-amber-200/40 via-stone-200/50 to-neutral-200/45 rounded-full filter blur-2xl"></div>
+          
+          <div className="absolute top-1/4 right-1/3 w-40 h-40 bg-gradient-to-tl from-stone-300/50 via-amber-300/40 to-neutral-300/45 rounded-full filter blur-2xl"></div>
+          
+          {/* Glass effect overlay - lighter to preserve background visibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-stone-50/30 to-amber-50/25 backdrop-blur-[0.5px]"></div>
+          
+          {/* Subtle texture overlay */}
+          <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-stone-900/10 via-transparent to-amber-900/8"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16">
