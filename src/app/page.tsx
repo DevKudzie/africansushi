@@ -225,7 +225,7 @@ export default function Home() {
                 Munyaradzwe <em className="font-manrope">Foundation</em>
               </h3>
               <p className="font-manrope text-stone mb-6 leading-relaxed flex-grow">
-                &ldquo;<strong>Be comforted</strong>&rdquo; — Our charity foundation spreads comfort and support to the 
+                &ldquo;<strong>Be Comforted</strong>&rdquo; — Our charity foundation spreads comfort and support to the 
                 most vulnerable members of our community.
               </p>
               <Button
@@ -292,8 +292,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-syne text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                Ready to Experience 
-                <em className="font-manrope"> African Pride</em>?
+                Ready to Experience African Pride
               </h2>
               <p className="font-manrope text-lg text-pearl/80 leading-relaxed">
                 Join us in celebrating heritage, supporting communities, and wearing our stories.

@@ -21,7 +21,6 @@ const navigationItems = [
   { name: "African Sushi Wear", href: "/african-sushi-wear" },
   { name: "Rujeko", href: "/rujeko" },
   { name: "Garikai Munyaradzwe Fund", href: "/foundation" },
-  { name: "Events", href: "/events" },
   { name: "Contact Us", href: "/contact" },
 ];
 

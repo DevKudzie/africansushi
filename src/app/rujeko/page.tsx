@@ -69,8 +69,8 @@ const fabricCollections = [
     name: "Unity Weave",
     price: "$42/yard",
     image: "/images/gal-5.jpg",
-    description: "Interwoven patterns that tell the story of Zimbabwe's diverse communities coming together.",
-    longDescription: "A masterful representation of Zimbabwe's cultural diversity, this collection features interlocking patterns that symbolize how different communities strengthen each other when woven together in harmony.",
+    description: "Interwoven patterns that tell the story of Zimbabwe&apos;s diverse communities coming together.",
+    longDescription: "A masterful representation of Zimbabwe&apos;s cultural diversity, this collection features interlocking patterns that symbolize how different communities strengthen each other when woven together in harmony.",
     pattern: "Interlocking Patterns",
     colors: ["Multi-colored", "Earth Palette", "Vibrant Mix"],
     occasions: ["Unity Day", "Community Events", "Diplomatic Gifts"],
@@ -84,7 +84,7 @@ const fabricCollections = [
     price: "$36/yard",
     image: "/images/gal-6.jpg",
     description: "Contemporary designs that honor the past while embracing the future.",
-    longDescription: "Bridging traditional craftsmanship with contemporary aesthetics, this collection speaks to the modern African who values heritage while embracing innovation. Perfect for today's fashion-forward cultural expression.",
+    longDescription: "Bridging traditional craftsmanship with contemporary aesthetics, this collection speaks to the modern African who values heritage while embracing innovation. Perfect for today&apos;s fashion-forward cultural expression.",
     pattern: "Modern Geometric with Traditional Elements",
     colors: ["Contemporary Blues", "Modern Grays", "Accent Gold"],
     occasions: ["Modern Fashion", "Business Wear", "Contemporary Style"],
@@ -94,17 +94,32 @@ const fabricCollections = [
   }
 ];
 
+interface Fabric {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+  description: string;
+  longDescription: string;
+  pattern: string;
+  colors: string[];
+  occasions: string[];
+  badge: string;
+  materials: string;
+  minOrder: string;
+}
+
 export default function Rujeko() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [selectedFabric, setSelectedFabric] = useState<Record<string, any> | null>(null);
+  const [selectedFabric, setSelectedFabric] = useState<Fabric | null>(null);
 
-  const openFabricDetail = (fabric: Record<string, any>) => {
+  const openFabricDetail = (fabric: Fabric) => {
     setSelectedFabric(fabric);
     onOpen();
   };
 
-  const handleWhatsAppOrder = (fabric: Record<string, any>) => {
-    const message = `Hi! I'm interested in ordering the ${fabric.name} fabric at ${fabric.price}. Please provide more details about availability, minimum order quantities, and shipping.`;
+  const handleWhatsAppOrder = (fabric: Fabric) => {
+    const message = `Hi! I&apos;m interested in ordering the ${fabric.name} fabric at ${fabric.price}. Please provide more details about availability, minimum order quantities, and shipping.`;
     const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp...');
@@ -131,7 +146,7 @@ export default function Rujeko() {
               <Button
                 className="bg-orange-900 text-white font-syne px-8 py-4 text-lg tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
                 onClick={() => {
-                  const message = "Hi! I'm interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
+                  const message = "Hi! I&apos;m interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
                   window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
                 }}
               >
@@ -346,7 +361,7 @@ export default function Rujeko() {
             <Button
               className="bg-white text-orange-900 font-syne px-8 py-3 tracking-wide hover:bg-orange-50 transition-all duration-200 sharp-edges"
               onClick={() => {
-                const message = "Hi! I'm interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
+                const message = "Hi! I&apos;m interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
                 window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
               }}
             >

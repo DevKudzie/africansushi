@@ -3,25 +3,81 @@
 import { Button, Card, CardBody, Image, Chip } from "@heroui/react";
 import Layout from "@/components/Layout";
 import { toast } from "react-hot-toast";
+import { useEffect, useState, useRef } from "react";
+
+// Counter component for animated numbers
+const CountUpNumber = ({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const countRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (countRef.current) {
+      observer.observe(countRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number | null = null;
+    const animate = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * target);
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [isVisible, target, duration]);
+
+  return (
+    <div ref={countRef} className="font-syne text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+      {count}{suffix}
+    </div>
+  );
+};
 
 const impactStats = [
   {
-    number: "40",
-    label: "Children at Kudakwashe Care Home",
-    description: "Receiving ongoing support"
+    number: 40,
+    suffix: "",
+    label: "Children Supported",
+    description: "At Kudakwashe Care Home"
   },
   {
-    number: "500+",
+    number: 500,
+    suffix: "+",
     label: "Meals Provided",
     description: "To homeless individuals"
   },
   {
-    number: "100+",
+    number: 100,
+    suffix: "+",
     label: "Families Helped",
     description: "Through various programs"
   },
   {
-    number: "15+",
+    number: 15,
+    suffix: "+",
     label: "Schools Reached",
     description: "Through educational initiatives"
   }
@@ -32,7 +88,7 @@ const programs = [
     id: 1,
     title: "Kudakwashe Care Home Support",
     description: "Our flagship program providing ongoing support to 40 children cared for by three incredible women. We provide essential supplies, educational materials, and regular visits.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&crop=center",
+    image: "/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg",
     impact: "40 children supported",
     status: "Ongoing",
     category: "Child Care"
@@ -50,7 +106,7 @@ const programs = [
     id: 3,
     title: "Single Parent Support",
     description: "Assisting single mothers and fathers facing challenges in caring for their children through donations, outreach programs, and empowerment initiatives.",
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&crop=center",
+    image: "/images/portrait-mother-her-baby_1048944-29857217.avif",
     impact: "50+ families supported",
     status: "Active",
     category: "Family Support"
@@ -59,7 +115,7 @@ const programs = [
     id: 4,
     title: "Elderly Care Initiative",
     description: "Caring for senior citizens who are no longer able to care for themselves, providing comfort, companionship, and practical support in their daily lives.",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop&crop=center",
+    image: "/images/2149352026.jpg",
     impact: "30+ elderly supported",
     status: "Expanding",
     category: "Elder Care"
@@ -68,7 +124,7 @@ const programs = [
     id: 5,
     title: "Educational Youth Empowerment",
     description: "Partnering with schools and universities to create volunteer opportunities and leadership development programs for young people eager to make a difference.",
-    image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop&crop=center",
+    image: "/images/2148892566 (1).jpg",
     impact: "200+ youth engaged",
     status: "Growing",
     category: "Youth Development"
@@ -85,14 +141,14 @@ const programs = [
 ];
 
 const handleDonation = () => {
-  const message = "Hi! I'd like to make a donation to the Munyaradzwe Foundation. Please provide me with donation options and methods.";
+  const message = "Hi! I&apos;d like to make a donation to the Munyaradzwe Foundation. Please provide me with donation options and methods.";
   const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
   toast.success('Redirecting to WhatsApp for donation information...');
 };
 
 const handleVolunteer = () => {
-  const message = "Hi! I'm interested in volunteering with the Munyaradzwe Foundation. Please tell me about volunteer opportunities.";
+  const message = "Hi! I&apos;m interested in volunteering with the Munyaradzwe Foundation. Please tell me about volunteer opportunities.";
   const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
   toast.success('Redirecting to WhatsApp for volunteer information...');
@@ -106,7 +162,7 @@ export default function Foundation() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
             <h1 className="font-syne text-5xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-              MUNYARADZWE Foundation
+              Munyaradzwe Foundation
             </h1>
             <p className="text-2xl text-gray-700 mb-4 max-w-3xl mx-auto font-light">
               Be Comforted
@@ -119,15 +175,13 @@ export default function Foundation() {
           {/* Impact Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {impactStats.map((stat, index) => (
-              <Card key={index} className="bg-white border border-gray-200 hover:border-emerald-400 text-center transition-all duration-300" style={{ boxShadow: 'none' }}>
-                <CardBody className="p-6">
-                  <div className="font-syne text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                    {stat.number}
-                  </div>
-                  <h3 className="font-syne text-lg font-bold text-gray-800 mb-1">
+              <Card key={index} className="bg-white border border-gray-200 hover:border-emerald-400 text-center transition-all duration-300 h-full" style={{ boxShadow: 'none' }}>
+                <CardBody className="p-6 flex flex-col justify-center min-h-[140px]">
+                  <CountUpNumber target={stat.number} suffix={stat.suffix} duration={2000} />
+                  <h3 className="font-syne text-lg font-bold text-gray-800 mb-1 leading-tight">
                     {stat.label}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {stat.description}
                   </p>
                 </CardBody>
@@ -147,7 +201,7 @@ export default function Foundation() {
               </h2>
               <div className="space-y-4 text-green-800 leading-relaxed">
                 <p>
-                  The MUNYARADZWE Foundation is a charity organization dedicated to spreading comfort, kindness, and support to the most vulnerable members of our community. Our name, MUNYARADZWE, meaning "be comforted," embodies the essence of what we do.
+                  The Munyaradzwe Foundation is a charity organization dedicated to spreading comfort, kindness, and support to the most vulnerable members of our community. Our name, MUNYARADZWE, meaning &ldquo;Be Comforted,&rdquo; embodies the essence of what we do.
                 </p>
                 <p>
                   Our mission is simple yet powerful: To provide comfort, support, and hope to those who need it most, and to inspire others to join us in making the world a better place. We believe that it is a true blessing to give.
@@ -176,7 +230,7 @@ export default function Foundation() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop&crop=center"
+                  src="/images/gal-4.jpg"
                   alt="African Children at Care Home"
                   className="w-full h-96 object-cover border border-emerald-200"
                   style={{ boxShadow: 'none' }}
@@ -184,7 +238,7 @@ export default function Foundation() {
               </div>
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=600&fit=crop&crop=center"
+                  src="/images/gal-1.jpg"
                   alt="African Community Care"
                   className="w-full h-96 object-cover border border-emerald-200"
                   style={{ boxShadow: 'none' }}
@@ -203,7 +257,7 @@ export default function Foundation() {
                   One of the highlights of this celebration was our visit to Kudakwashe Care Home, where we donated heartfelt gifts to 40 children, all of whom are cared for by three incredible women. It was a day filled with love, joy, and human connection.
                 </p>
                 <p>
-                  Garry's legacy continues to inspire us as we expand our mission, working tirelessly to bring comfort and hope to even more individuals.
+                  Garry&apos;s legacy continues to inspire us as we expand our mission, working tirelessly to bring comfort and hope to even more individuals.
                 </p>
               </div>
             </div>
@@ -272,8 +326,8 @@ export default function Foundation() {
                       className="w-full bg-emerald-900 text-white font-syne px-4 py-2 text-sm tracking-wide hover:bg-emerald-800 transition-all duration-200"
                       style={{ boxShadow: 'none' }}
                       onClick={() => {
-                        const message = `Hi! I'd like to learn more about the ${program.title} program and how I can get involved.`;
-                        window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                                        const message = `Hi! I&apos;d like to learn more about the ${program.title} program and how I can get involved.`;
+                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
                       }}
                     >
                       Learn More
@@ -302,7 +356,7 @@ export default function Foundation() {
               Who We Serve
             </h2>
             <p className="text-xl text-green-700 max-w-3xl mx-auto">
-              The MUNYARADZWE Foundation is driven by a deep sense of empathy and care for the most vulnerable members of our community.
+              The Munyaradzwe Foundation is driven by a deep sense of empathy and care for the most vulnerable members of our community.
             </p>
           </div>
 
@@ -372,7 +426,7 @@ export default function Foundation() {
               </h2>
               <div className="space-y-4 text-emerald-800 leading-relaxed">
                 <p>
-                  The MUNYARADZWE Foundation believes that the future belongs to the youth. That's why we are reaching out to educational institutions—schools, colleges, and universities—to empower young people who are eager to make a difference in the world.
+                  The Munyaradzwe Foundation believes that the future belongs to the youth. That&apos;s why we are reaching out to educational institutions—schools, colleges, and universities—to empower young people who are eager to make a difference in the world.
                 </p>
                 <p>
                   Through partnerships with schools and universities, we create volunteer opportunities, provide leadership development platforms, and organize social awareness workshops that educate students on the importance of empathy, kindness, and social responsibility.
@@ -402,7 +456,7 @@ export default function Foundation() {
               How You Can Get Involved
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Together, we can change lives. The MUNYARADZWE Foundation is built on the principle of collective effort.
+              Together, we can change lives. The Munyaradzwe Foundation is built on the principle of collective effort.
             </p>
           </div>
 
@@ -453,8 +507,8 @@ export default function Foundation() {
                 </p>
                 <Button
                   onClick={() => {
-                    const message = "Hi! I'm interested in becoming a sponsor for the Munyaradzwe Foundation. Please provide more information.";
-                    window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                                    const message = "Hi! I&apos;m interested in becoming a sponsor for the Munyaradzwe Foundation. Please provide more information.";
+                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                   className="bg-gray-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-gray-800 transition-all duration-200"
                   style={{ boxShadow: 'none' }}
@@ -474,8 +528,8 @@ export default function Foundation() {
                 </p>
                 <Button
                   onClick={() => {
-                    const message = "Hi! I'd like to learn more about how I can help spread awareness about the Munyaradzwe Foundation.";
-                    window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                                    const message = "Hi! I&apos;d like to learn more about how I can help spread awareness about the Munyaradzwe Foundation.";
+                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                   className="bg-gray-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-gray-800 transition-all duration-200"
                   style={{ boxShadow: 'none' }}

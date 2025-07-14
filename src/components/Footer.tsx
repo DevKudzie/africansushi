@@ -87,11 +87,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/events" className="font-manrope text-stone hover:text-charcoal transition-colors">
-                  Events
-                </a>
-              </li>
-              <li>
                 <a href="/contact" className="font-manrope text-stone hover:text-charcoal transition-colors">
                   Contact
                 </a>
