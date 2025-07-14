@@ -26,7 +26,7 @@ const heroSlides = [
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Honoring Garry Mapanzure through meaningful impact.",
-    image: "/images/ChatGPT Image Jun 19, 2025, 08_28_13 PM.png",
+    image: "/images/garry1.jpg",
     cta: "Support Foundation"
   }
 ];
@@ -76,13 +76,13 @@ export default function Home() {
             </div>
 
             {/* Content - Better Centered */}
-            <div className="relative z-10 h-full flex items-center">
+            <div className="relative z-10 h-full mt-8 flex items-center">
               <div className="w-full px-8 lg:px-16 max-w-7xl mx-auto">
                 <div className="max-w-2xl">
-                  <h1 className="font-syne text-5xl lg:text-7xl xl:text-8xl font-bold text-pearl mb-4 leading-none">
+                  <h1 className="font-syne text-5xl lg:text-7xl xl:text-8xl font-bold text-pearl leading-none">
                     {slide.title}
                   </h1>
-                  <h2 className="font-manrope text-2xl lg:text-3xl xl:text-4xl font-light text-pearl/90 mb-6 leading-tight">
+                  <h2 className="font-manrope text-2xl lg:text-3xl xl:text-5xl font-light text-pearl/90 mb-6 leading-tight">
                     {slide.subtitle}
                   </h2>
                   <p className="font-manrope text-xl lg:text-2xl text-pearl/80 mb-8 leading-relaxed max-w-lg">
@@ -158,7 +158,7 @@ export default function Home() {
             <div className="premium-card sharp-edges p-8 h-80 relative overflow-hidden group">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/thumbnail_G on W front .jpg"
+                  src="/images/design-refresh-adding-personal-style-to-plain-hoodies-6189170.webp"
                   alt="African Sushi Wear"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -186,7 +186,7 @@ export default function Home() {
             <div className="premium-card sharp-edges p-8 h-80 relative overflow-hidden group">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/rujeko-logo.png"
+                  src="/images/fadhil-abhimantra-tvq_Kkl46q0-unsplash.jpg"
                   alt="Rujeko Fabrics"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -242,7 +242,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
             <div className="lg:col-span-2 relative h-64">
               <Image
-                src="/images/gal-6.jpg"
+                src="/images/2149647305.jpg"
                 alt="Craftsmanship"
                 fill
                 className="object-cover sharp-edges"
@@ -258,7 +258,7 @@ export default function Home() {
             
             <div className="premium-card sharp-edges h-64 relative overflow-hidden group">
               <Image
-                src="/images/gal-25.jpg"
+                src="/images/luis-quintero-OGnP9dmHBPQ-unsplash.jpg"
                 alt="Heritage 1"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"

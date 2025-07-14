@@ -143,7 +143,7 @@ export default function Rujeko() {
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px] overflow-hidden sharp-edges border border-orange-200">
                 <NextImage
-                  src="/images/gal-25.jpg"
+                  src="/images/kalpa-mahagamage--eXbTwI0VU0-unsplash.jpg"
                   alt="Rujeko Heritage Fabric"
                   fill
                   className="object-cover"
@@ -195,17 +195,17 @@ export default function Rujeko() {
             </div>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                <div className="relative w-full h-60 overflow-hidden sharp-edges border border-orange-200">
+                <div className="relative w-full h-96 overflow-hidden sharp-edges border border-orange-200">
                   <NextImage
-                    src="/images/gal-1.jpg"
+                    src="/images/wafieq-akmal-wEqwmVwseVE-unsplash.jpg"
                     alt="Rujeko Fabric Detail"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <div className="relative w-full h-60 overflow-hidden sharp-edges border border-orange-200">
+                <div className="relative w-full h-96 overflow-hidden sharp-edges border border-orange-200">
                   <NextImage
-                    src="/images/gal-3.jpg"
+                    src="/images/kingsley-hemans-kPuwqm0jYJU-unsplash (1).jpg"
                     alt="Rujeko Heritage Pattern"
                     fill
                     className="object-cover"
