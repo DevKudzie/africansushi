@@ -43,47 +43,7 @@ interface TshirtCategory {
 
 
 
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Heritage Hoodie - Gold",
-    price: "$85",
-    originalPrice: "$120",
-    image: "/images/thumbnail_G on W front .jpg",
-    images: [
-      { src: "/images/thumbnail_G on W front .jpg", alt: "Heritage Hoodie - Front View" },
-      { src: "/images/thumbnail_G on W back .jpg", alt: "Heritage Hoodie - Back View" },
-      { src: "/images/thumbnail_G on B front .jpg", alt: "Heritage Hoodie - Alternative Color" }
-    ],
-    description: "Premium cotton blend hoodie featuring traditional African patterns in gold embroidery. Crafted for comfort and cultural expression.",
-    longDescription: "This premium hoodie represents the perfect fusion of comfort and cultural pride. Made from high-quality cotton blend fabric, it features intricate gold embroidery that tells the story of African heritage. The relaxed fit ensures all-day comfort while the striking design makes a bold statement about identity and belonging.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Gold on White", "Gold on Black", "White on Black"],
-    category: "Hoodies",
-    materials: "80% Cotton, 20% Polyester",
-    care: "Machine wash cold, tumble dry low"
-  },
-  {
-    id: 5,
-    name: "Heritage Hoodie - Back Graphic",
-    price: "$90",
-    originalPrice: "$120",
-    image: "/images/thumbnail_G on W back .jpg",
-    images: [
-      { src: "/images/thumbnail_G on W back .jpg", alt: "Heritage Hoodie - Large Back Graphic" },
-      { src: "/images/thumbnail_W on B back .png", alt: "Heritage Hoodie - Large Back Alt" },
-      { src: "/images/thumbnail_W on B front .png", alt: "Heritage Hoodie - Front View" }
-    ],
-    description: "Premium hoodie with a large back print graphic for bold statement styling.",
-    longDescription: "This variant features a large statement graphic on the back for maximum impact, crafted on a premium cotton blend hoodie for comfort and durability.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Gold on White", "White on Black"],
-    category: "Hoodies",
-    materials: "80% Cotton, 20% Polyester",
-    care: "Machine wash cold, tumble dry low"
-  },
-  
-];
+
 
 const tshirtCategories: TshirtCategory[] = [
   {
@@ -246,8 +206,7 @@ const designers = [
 ];
 
 export default function AfricanSushiWear() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const {isOpen, onOpenChange} = useDisclosure();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [currentProductImages, setCurrentProductImages] = useState<ProductImage[]>([]);
