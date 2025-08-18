@@ -7,8 +7,7 @@ import { toast } from "react-hot-toast";
 import { useState } from "react";
 
 const businessHours = [
-  { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
-  { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
+  { day: "Mon - Sat", hours: "10:00 AM - 6:00 PM" },
   { day: "Sunday", hours: "Closed" },
   { day: "Public Holidays", hours: "Closed" }
 ];
@@ -43,7 +42,7 @@ Subject: ${formData.subject}
 Message: ${formData.message}
     `.trim();
 
-    const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp with your message...');
     
@@ -63,7 +62,7 @@ Message: ${formData.message}
       <section className="pt-32 pb-20 bg-gradient-to-br from-stone-50 to-zinc-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h1 className="font-syne text-5xl lg:text-7xl font-bold text-zinc-900 mb-6 tracking-tight">
+            <h1 className="font-heading text-5xl lg:text-7xl font-bold text-zinc-900 mb-6 tracking-tight">
               Contact Us
             </h1>
             <p className="text-2xl text-zinc-700 mb-4 max-w-3xl mx-auto font-light">
@@ -88,7 +87,7 @@ Message: ${formData.message}
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-center gap-2 text-stone-700">
                     <Phone className="w-4 h-4" />
-                    <span>+263 123 456 789</span>
+                    <span>+44 7376 712 695</span>
                   </div>
                   <div className="flex items-center justify-center gap-2 text-stone-700">
                     <Mail className="w-4 h-4" />
@@ -96,7 +95,7 @@ Message: ${formData.message}
                   </div>
                   <div className="flex items-center justify-center gap-2 text-stone-700">
                     <MapPin className="w-4 h-4" />
-                    <span>Zimbabwe</span>
+                    <span>United Kingdom</span>
                   </div>
                 </div>
                 <p className="text-stone-600 text-sm leading-relaxed mb-6">
@@ -106,7 +105,7 @@ Message: ${formData.message}
                   className="bg-zinc-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-amber-600 transition-all duration-200 sharp-edges"
                   onClick={() => {
                     const message = "Hi! I'm interested in learning more about African Pride. Please provide more information about your services.";
-                    window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                    window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                 >
                   Chat on WhatsApp
@@ -276,7 +275,7 @@ Message: ${formData.message}
               className="bg-white text-zinc-900 font-syne px-8 py-3 tracking-wide hover:bg-amber-100 transition-all duration-200 sharp-edges"
               onClick={() => {
                 const message = "Hi! I'm interested in learning more about African Pride. Please provide more information about your services.";
-                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
               }}
             >
               Chat on WhatsApp

@@ -25,9 +25,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-manrope text-stone mb-8 max-w-md leading-relaxed">
-              Bringing together premium African fashion, heritage fabrics, and meaningful charity work. 
-              Honoring the legacy of <em>Garry Mapanzure</em> through African Sushi Wear, Rujeko, 
-              and the Garikai Munyaradzwe Foundation.
+              A central and unifying platform celebrating African Identity, Creativity, and Community through fashion and philanthropy
             </p>
             
             {/* WhatsApp Contact */}
@@ -37,12 +35,12 @@ export default function Footer() {
                   <Phone className="w-4 h-4 text-pearl" />
                 </div>
                 <a 
-                  href="https://wa.me/263123456789" 
+                  href="https://wa.me/447376712695" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-manrope text-ash hover:text-charcoal transition-colors"
                 >
-                  +263 123 456 789
+                  +44 7376 712 695
                 </a>
               </div>
               
@@ -62,7 +60,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-ash flex items-center justify-center sharp-edges">
                   <MapPin className="w-4 h-4 text-pearl" />
                 </div>
-                <span className="font-manrope text-ash">Zimbabwe</span>
+                <span className="font-manrope text-ash">United Kingdom</span>
               </div>
             </div>
           </div>
@@ -131,11 +129,9 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Legacy Statement */}
+        {/* Statement */}
         <div className="text-center pt-6">
-          <p className="font-syne text-lg text-stone">
-            In loving memory of <strong>Garry Mapanzure</strong> — dreamer, creator, legacy.
-          </p>
+          <p className="font-syne text-lg text-stone">Dream, Create, Celebrate</p>
         </div>
       </div>
     </footer>

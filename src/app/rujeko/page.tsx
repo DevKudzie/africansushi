@@ -120,7 +120,7 @@ export default function Rujeko() {
 
   const handleWhatsAppOrder = (fabric: Fabric) => {
     const message = `Hi! I&apos;m interested in ordering the ${fabric.name} fabric at ${fabric.price}. Please provide more details about availability, minimum order quantities, and shipping.`;
-    const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp...');
   };
@@ -133,12 +133,9 @@ export default function Rujeko() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Title and Content */}
             <div>
-              <h1 className="font-syne text-5xl lg:text-6xl font-bold text-orange-900 mb-6 leading-tight">
-                Rujeko
-              </h1>
-              <p className="text-2xl text-neutral-800 mb-6 font-light">
-                Radiance Woven in Heritage
-              </p>
+              <h1 className="font-heading text-5xl lg:text-6xl font-bold text-orange-900 mb-2 leading-tight">Rujeko</h1>
+              <p className="text-base text-neutral-700 mb-2">By Kiki Mapanzure</p>
+              <p className="text-2xl text-neutral-800 mb-6 font-light">Radiance Woven in Heritage</p>
               <p className="text-lg text-neutral-700 mb-8 leading-relaxed">
                 Authentic African fabrics that celebrate clan totems, cultural identity, 
                 and the beauty of Zimbabwean traditions. Each thread tells a story of belonging.
@@ -147,7 +144,7 @@ export default function Rujeko() {
                 className="bg-orange-900 text-white font-syne px-8 py-4 text-lg tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
                 onClick={() => {
                   const message = "Hi! I&apos;m interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
-                  window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                  window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
                 }}
               >
                 Explore Collections
@@ -183,45 +180,36 @@ export default function Rujeko() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
-              Our Story
-            </h2>
+            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">Our Story</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="font-syne text-3xl font-bold text-orange-900 mb-6">
-                A Fabric with Meaning in Every Thread
-              </h3>
+              <h3 className="font-syne text-3xl font-bold text-orange-900 mb-6">A Fabric with Meaning in Every Thread</h3>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                RUJEKO began as a personal journey—a search for meaning, memory, and connection. 
-                For designer Kiki Mapanzure, fabric is more than material. It&apos;s a language that 
-                speaks identity, honors ancestry, and imagines a future grounded in pride.
+                RUJEKO is more than a fabric line — it’s a personal and cultural journey. Founded by Zimbabwean designer Kiki Mapanzure, the brand began as a way to preserve stories, heritage, and identity through textiles. For Kiki, fabric speaks where words fall short — becoming a way to honor ancestry and imagine a future filled with pride.
               </p>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                Each RUJEKO textile is layered with symbolism, crafted to be both beautiful 
-                and deeply meaningful. The designs are not random—they are rooted in Zimbabwe&apos;s 
-                cultural landscape, carefully woven to reflect its richness and diversity.
+                At the heart of this story are Zimbabwe’s rich clan totems — powerful animal symbols like Shumba (lion), Nzou (elephant), Mhofu (eland), Hungwe (fish eagle), Soko (monkey), and Shiri (bird) — each representing lineage, character, and belonging. RUJEKO transforms these totems into living art, woven into every design. While these core totems anchor the collection, the brand will also accommodate other totem prints on request, ensuring every wearer sees their own story represented.
               </p>
               <p className="text-neutral-800 leading-relaxed">
-                Named after Kiki&apos;s late father, RUJEKO means radiance—a fitting symbol for 
-                a brand that seeks to shine light on heritage, identity, and belonging.
+                RUJEKO means “radiance” — and it’s also the name of Kiki’s late father, a man of honor, leadership, and cultural pride. His legacy is stitched into every design, guiding the brand’s purpose.
               </p>
             </div>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative w-full h-96 overflow-hidden sharp-edges border border-orange-200">
                   <NextImage
-                    src="/images/wafieq-akmal-wEqwmVwseVE-unsplash.jpg"
-                    alt="Rujeko Fabric Detail"
+                    src="/images/gal-4.jpg"
+                    alt="Rujeko Boutique Display"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="relative w-full h-96 overflow-hidden sharp-edges border border-orange-200">
                   <NextImage
-                    src="/images/kingsley-hemans-kPuwqm0jYJU-unsplash (1).jpg"
-                    alt="Rujeko Heritage Pattern"
+                    src="/images/gal-25.jpg"
+                    alt="Rujeko Our Story Portrait"
                     fill
                     className="object-cover"
                   />
@@ -279,16 +267,16 @@ export default function Rujeko() {
                   </div>
 
                   <div className="space-y-3">
-                    <Button
+                      <Button
                       className="w-full bg-orange-900 text-white font-syne px-4 py-2 text-sm tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
                       onClick={() => openFabricDetail(fabric)}
                     >
                       View Details
                     </Button>
-                    <Button
+                      <Button
                       variant="bordered"
                       className="w-full border-orange-300 text-orange-800 hover:bg-orange-100 font-syne px-4 py-2 text-sm tracking-wide transition-all duration-200 sharp-edges"
-                      onClick={() => handleWhatsAppOrder(fabric)}
+                        onClick={() => handleWhatsAppOrder(fabric)}
                     >
                       Quick Order
                     </Button>

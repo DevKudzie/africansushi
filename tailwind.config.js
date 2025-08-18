@@ -12,7 +12,11 @@ module.exports = {
     extend: {
       fontFamily: {
         'manrope': ['Manrope', 'sans-serif'],
+        // Restore Syne to avoid pulling Rimba except on h1
         'syne': ['Syne', 'sans-serif'],
+        // Only use Rimba (with fallbacks) via this heading alias
+        'heading': ['"Rimba Andalas"', 'Marcellus', 'Syne', 'serif'],
+        'marcellus': ['Marcellus', 'serif'],
       },
       colors: {
         // Premium Neutral Palette

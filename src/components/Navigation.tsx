@@ -20,7 +20,7 @@ const navigationItems = [
   { name: "Home", href: "/" },
   { name: "African Sushi Wear", href: "/african-sushi-wear" },
   { name: "Rujeko", href: "/rujeko" },
-  { name: "Garikai Munyaradzwe Fund", href: "/foundation" },
+  { name: "Munyaradzwe Foundation", href: "/foundation" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -45,7 +45,7 @@ export default function Navigation() {
     if (!isHomePage) {
       return isScrolled 
         ? "bg-pearl/95 backdrop-blur-md border-b border-nude" 
-        : "bg-transparent";
+        : "bg-pearl/20 backdrop-blur-md";
     }
     
     return isScrolled 

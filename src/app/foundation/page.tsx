@@ -142,14 +142,14 @@ const programs = [
 
 const handleDonation = () => {
   const message = "Hi! I&apos;d like to make a donation to the Munyaradzwe Foundation. Please provide me with donation options and methods.";
-  const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
   toast.success('Redirecting to WhatsApp for donation information...');
 };
 
 const handleVolunteer = () => {
   const message = "Hi! I&apos;m interested in volunteering with the Munyaradzwe Foundation. Please tell me about volunteer opportunities.";
-  const whatsappUrl = `https://wa.me/263123456789?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
   toast.success('Redirecting to WhatsApp for volunteer information...');
 };
@@ -161,14 +161,9 @@ export default function Foundation() {
       <section className="pt-32 pb-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h1 className="font-syne text-5xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-              Munyaradzwe Foundation
-            </h1>
-            <p className="text-2xl text-gray-700 mb-4 max-w-3xl mx-auto font-light">
-              Be Comforted
-            </p>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              A charity organization dedicated to spreading comfort, kindness, and support to the most vulnerable members of our community.
+            <h1 className="font-heading text-5xl lg:text-7xl font-bold text-gray-900 mb-2 tracking-tight">Welcome to the MUNYARADZWE Foundation</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              The MUNYARADZWE Foundation is a charitable organization committed to providing comfort and support to the most vulnerable in society. The name “MUNYARADZWE,” meaning “be comforted,” reflects its mission to assist the homeless, abandoned children, and isolated elderly individuals through acts of kindness and practical aid. The foundation believes in the power of giving to transform lives.
             </p>
           </div>
 
@@ -322,17 +317,17 @@ export default function Foundation() {
                   </div>
 
                   <div className="space-y-2">
-                    <Button
+                  <Button
                       className="w-full bg-emerald-900 text-white font-syne px-4 py-2 text-sm tracking-wide hover:bg-emerald-800 transition-all duration-200"
                       style={{ boxShadow: 'none' }}
                       onClick={() => {
-                                        const message = `Hi! I&apos;d like to learn more about the ${program.title} program and how I can get involved.`;
-                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                      const message = `Hi! I&apos;d like to learn more about the ${program.title} program and how I can get involved.`;
+                      window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
                       }}
                     >
                       Learn More
                     </Button>
-                    <Button
+                  <Button
                       variant="bordered"
                       className="w-full border-emerald-300 text-emerald-800 hover:bg-emerald-100 font-syne px-4 py-2 text-sm tracking-wide transition-all duration-200"
                       style={{ boxShadow: 'none' }}
