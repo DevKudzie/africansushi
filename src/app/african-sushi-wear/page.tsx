@@ -41,15 +41,7 @@ interface TshirtCategory {
   items: TshirtItem[];
 }
 
-interface HoodieItem {
-  src: string;
-  title: string;
-}
 
-interface HoodieGroup {
-  name: string;
-  items: HoodieItem[];
-}
 
 const products: Product[] = [
   {
@@ -265,10 +257,7 @@ export default function AfricanSushiWear() {
   const [priceFilter, setPriceFilter] = useState<string>("All");
   const [modelIndex, setModelIndex] = useState(0);
 
-  const openProductDetail = (product: Product) => {
-    setSelectedProduct(product);
-    onOpen();
-  };
+
 
   const openLightbox = (product: Product, index: number = 0) => {
     setCurrentProductImages(product.images);
@@ -290,16 +279,9 @@ export default function AfricanSushiWear() {
     return () => clearInterval(timer);
   }, []);
 
-  const filteredProducts = products.filter((p) => {
-    const matchesGarment = garmentType === "All" || p.category === garmentType;
-    const matchesSearch = searchQuery.trim() === "" ||
-      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesPrice = priceFilter === "All" || p.price.includes(`$${priceFilter}`);
-    return matchesGarment && matchesSearch && matchesPrice;
-  });
 
-  const visibleCategories = tshirtCategories.filter((cat) => selectedCategory === "All" || cat.name === selectedCategory);
+
+
 
   // Remove getHoodiePrice function as prices are now hardcoded in products
 
