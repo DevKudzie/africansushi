@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card, CardBody, Chip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, Input, Select, SelectItem } from "@heroui/react";
+import { Button, Card, CardBody, Input, Select, SelectItem } from "@heroui/react";
 import { Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import NextImage from "next/image";
@@ -15,21 +15,7 @@ interface ProductImage {
   alt: string;
 }
 
-interface Product {
-  id: number;
-  name: string;
-  price: string;
-  originalPrice: string;
-  image: string;
-  images: ProductImage[];
-  description: string;
-  longDescription: string;
-  sizes: string[];
-  colors: string[];
-  category: string;
-  materials: string;
-  care: string;
-}
+
 
 interface TshirtItem {
   src: string;
@@ -206,7 +192,7 @@ const designers = [
 ];
 
 export default function AfricanSushiWear() {
-  const {isOpen, onOpenChange} = useDisclosure();
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [currentProductImages, setCurrentProductImages] = useState<ProductImage[]>([]);
@@ -218,11 +204,7 @@ export default function AfricanSushiWear() {
 
 
 
-  const openLightbox = (product: Product, index: number = 0) => {
-    setCurrentProductImages(product.images);
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
+
 
   const openTshirtLightbox = (item: TshirtItem) => {
     setCurrentProductImages([{ src: item.src, alt: item.title }]);
@@ -300,11 +282,7 @@ export default function AfricanSushiWear() {
   ];
 
 
-  const handleWhatsAppOrder = (product: Product) => {
-    const message = `Hi! I'm interested in the ${product.name} (${product.price}). Could you please provide more details about sizing, colors, and shipping options?`;
-    window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
-    toast.success('Redirecting to WhatsApp...');
-  };
+
 
   return (
     <Layout>
@@ -402,26 +380,29 @@ export default function AfricanSushiWear() {
               className="sharp-edges"
             />
             <Select selectedKeys={[garmentType]} onChange={(e) => setGarmentType(e.target.value)} className="sharp-edges">
-              <SelectItem key="All" value="All">All Garments</SelectItem>
-              <SelectItem key="Hoodies" value="Hoodies">Hoodies</SelectItem>
-              <SelectItem key="T-Shirts" value="T-Shirts">T‑Shirts</SelectItem>
-              <SelectItem key="Sweatshirts" value="Sweatshirts">Sweatshirts</SelectItem>
-              <SelectItem key="Outerwear" value="Outerwear">Outerwear</SelectItem>
+              <SelectItem key="All">All Garments</SelectItem>
+              <SelectItem key="Hoodies">Hoodies</SelectItem>
+              <SelectItem key="T-Shirts">T‑Shirts</SelectItem>
+              <SelectItem key="Sweatshirts">Sweatshirts</SelectItem>
+              <SelectItem key="Outerwear">Outerwear</SelectItem>
             </Select>
             <Select selectedKeys={[priceFilter]} onChange={(e) => setPriceFilter(e.target.value)} className="sharp-edges">
-              <SelectItem key="All" value="All">All Prices</SelectItem>
-              <SelectItem key="35" value="35">$35</SelectItem>
-              <SelectItem key="40" value="40">$40</SelectItem>
-              <SelectItem key="75" value="75">$75</SelectItem>
-              <SelectItem key="85" value="85">$85</SelectItem>
-              <SelectItem key="90" value="90">$90</SelectItem>
-              <SelectItem key="150" value="150">$150</SelectItem>
+              <SelectItem key="All">All Prices</SelectItem>
+              <SelectItem key="35">$35</SelectItem>
+              <SelectItem key="40">$40</SelectItem>
+              <SelectItem key="75">$75</SelectItem>
+              <SelectItem key="85">$85</SelectItem>
+              <SelectItem key="90">$90</SelectItem>
+              <SelectItem key="150">$150</SelectItem>
             </Select>
             <Select selectedKeys={[selectedCategory]} onChange={(e) => setSelectedCategory(e.target.value)} className="sharp-edges">
-              <SelectItem key="All" value="All">All T‑Shirt Categories</SelectItem>
-              {tshirtCategories.map((c) => (
-                <SelectItem key={c.name} value={c.name}>{c.name}</SelectItem>
-              ))}
+              <SelectItem key="All">All T‑Shirt Categories</SelectItem>
+              <SelectItem key="LOVE">LOVE</SelectItem>
+              <SelectItem key="CONSOLIDATION">CONSOLIDATION</SelectItem>
+              <SelectItem key="HOPE">HOPE</SelectItem>
+              <SelectItem key="FAITH">FAITH</SelectItem>
+              <SelectItem key="VIBES ON VIBES">VIBES ON VIBES</SelectItem>
+              <SelectItem key="NOVUS AFRICA MAP">NOVUS AFRICA MAP</SelectItem>
             </Select>
           </div>
           <div className="text-center mb-16">
@@ -501,19 +482,22 @@ export default function AfricanSushiWear() {
               className="sharp-edges"
             />
             <Select selectedKeys={[garmentType]} onChange={(e) => setGarmentType(e.target.value)} className="sharp-edges">
-              <SelectItem key="All" value="All">All Garments</SelectItem>
-              <SelectItem key="T-Shirts" value="T-Shirts">T‑Shirts</SelectItem>
+              <SelectItem key="All" >All Garments</SelectItem>
+              <SelectItem key="T-Shirts" >T‑Shirts</SelectItem>
             </Select>
             <Select selectedKeys={[priceFilter]} onChange={(e) => setPriceFilter(e.target.value)} className="sharp-edges">
-              <SelectItem key="All" value="All">All Prices</SelectItem>
-              <SelectItem key="35" value="35">$35</SelectItem>
-              <SelectItem key="40" value="40">$40</SelectItem>
+              <SelectItem key="All" >All Prices</SelectItem>
+              <SelectItem key="35" >$35</SelectItem>
+              <SelectItem key="40">$40</SelectItem>
             </Select>
             <Select selectedKeys={[selectedCategory]} onChange={(e) => setSelectedCategory(e.target.value)} className="sharp-edges">
-              <SelectItem key="All" value="All">All T‑Shirt Categories</SelectItem>
-              {tshirtCategories.map((c) => (
-                <SelectItem key={c.name} value={c.name}>{c.name}</SelectItem>
-              ))}
+              <SelectItem key="All">All T‑Shirt Categories</SelectItem>
+              <SelectItem key="LOVE">LOVE</SelectItem>
+              <SelectItem key="CONSOLIDATION">CONSOLIDATION</SelectItem>
+              <SelectItem key="HOPE">HOPE</SelectItem>
+              <SelectItem key="FAITH">FAITH</SelectItem>
+              <SelectItem key="VIBES ON VIBES">VIBES ON VIBES</SelectItem>
+              <SelectItem key="NOVUS AFRICA MAP">NOVUS AFRICA MAP</SelectItem>
             </Select>
           </div>
 
@@ -797,151 +781,8 @@ export default function AfricanSushiWear() {
         }
       `}</style>
 
-      {/* Product Detail Modal */}
-      <Modal 
-        isOpen={isOpen} 
-        onOpenChange={onOpenChange}
-        size="4xl"
-        classNames={{
-          base: "sharp-edges",
-          backdrop: "bg-zinc-900/50",
-          wrapper: "items-center justify-center"
-        }}
-      >
-        <ModalContent className="sharp-edges bg-white">
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1 border-b border-zinc-200 pb-4">
-                <h2 className="font-syne text-2xl font-bold text-zinc-900">
-                  {selectedProduct?.name}
-                </h2>
-                <p className="text-zinc-600 font-normal">
-                  {selectedProduct?.category}
-                </p>
-              </ModalHeader>
-              <ModalBody className="py-6">
-                {selectedProduct && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="relative aspect-[3/4] group cursor-pointer" onClick={() => openLightbox(selectedProduct, 0)}>
-                      <NextImage
-                        src={selectedProduct.image}
-                        alt={selectedProduct.name}
-                        fill
-                        className="object-cover sharp-edges"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div className="bg-white/90 p-2 rounded-full">
-                          <Eye className="w-5 h-5 text-zinc-900" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                        {selectedProduct.images.length} photos
-                      </div>
-                    </div>
-                    <div className="space-y-6">
-                      <div>
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="font-syne font-bold text-3xl text-zinc-900">
-                            {selectedProduct.price}
-                          </span>
-                          <span className="text-zinc-500 line-through text-lg">
-                            {selectedProduct.originalPrice}
-                          </span>
-                        </div>
-                        <p className="text-zinc-700 leading-relaxed">
-                          {selectedProduct.longDescription}
-                        </p>
-                      </div>
 
-                      <div>
-                        <h4 className="font-syne font-bold text-zinc-900 mb-2">Available Sizes</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedProduct.sizes.map((size: string) => (
-                            <Chip 
-                              key={size} 
-                              size="sm" 
-                              className="bg-zinc-100 text-zinc-700 border border-zinc-300 sharp-edges"
-                            >
-                              {size}
-                            </Chip>
-                          ))}
-                        </div>
-                      </div>
 
-                      <div>
-                        <h4 className="font-syne font-bold text-zinc-900 mb-2">Available Colors</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedProduct.colors.map((color: string) => (
-                            <Chip 
-                              key={color} 
-                              size="sm" 
-                              className="bg-zinc-100 text-zinc-700 border border-zinc-300 sharp-edges"
-                            >
-                              {color}
-                            </Chip>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <h4 className="font-syne font-bold text-zinc-900 mb-1">Materials</h4>
-                          <p className="text-zinc-600">{selectedProduct.materials}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-syne font-bold text-zinc-900 mb-1">Care Instructions</h4>
-                          <p className="text-zinc-600">{selectedProduct.care}</p>
-                        </div>
-                      </div>
-
-                      {/* Additional Images Preview */}
-                      <div>
-                        <h4 className="font-syne font-bold text-zinc-900 mb-2">View More Photos</h4>
-                        <div className="flex gap-2">
-                          {selectedProduct.images.slice(0, 3).map((image: ProductImage, idx: number) => (
-                            <div 
-                              key={idx}
-                              className="relative w-16 h-16 cursor-pointer border border-zinc-200 hover:border-zinc-400 transition-colors"
-                              onClick={() => openLightbox(selectedProduct, idx)}
-                            >
-                              <NextImage
-                                src={image.src}
-                                alt={image.alt}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </ModalBody>
-              <ModalFooter className="border-t border-zinc-200 pt-4">
-                <Button 
-                  variant="bordered" 
-                  onPress={onClose}
-                  className="border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-syne tracking-wide sharp-edges"
-                >
-                  Close
-                </Button>
-                <Button 
-                  className="bg-zinc-900 text-white font-syne tracking-wide hover:bg-zinc-700 transition-all duration-200 sharp-edges"
-                  onPress={() => {
-                    if (selectedProduct) {
-                      handleWhatsAppOrder(selectedProduct);
-                    }
-                    onClose();
-                  }}
-                >
-                  Order on WhatsApp
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </Layout>
   );
 } 
