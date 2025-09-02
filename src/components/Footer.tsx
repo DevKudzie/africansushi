@@ -1,9 +1,21 @@
 "use client";
 
 import React from "react";
+import NextImage from "next/image";
+import { usePathname } from "next/navigation";
 import { Phone, Mail, MapPin, Heart } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isFoundationPage = pathname === "/foundation";
+  const isRujekoPage = pathname === "/rujeko";
+
+  // Use African Pride logo consistently across all pages
+  const logoInfo = {
+    src: "/images/Africans-pride-logo-horizontal.png",
+    alt: "African Pride"
+  };
+
   return (
     <footer className="bg-mist border-t border-nude">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-16">
@@ -11,18 +23,14 @@ export default function Footer() {
           
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-charcoal flex items-center justify-center sharp-edges">
-                <span className="text-pearl font-syne font-bold text-xl">AP</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-syne text-xl font-bold text-charcoal">
-                  African Pride
-                </span>
-                <span className="text-xs text-stone font-manrope">
-                  Taste the Vision. Live the Legacy.
-                </span>
-              </div>
+            <div className="mb-6">
+              <NextImage
+                src={logoInfo.src}
+                alt={logoInfo.alt}
+                width={200}
+                height={60}
+                className="h-16 w-auto object-contain"
+              />
             </div>
             <p className="font-manrope text-stone mb-8 max-w-md leading-relaxed">
               A central and unifying platform celebrating African Identity, Creativity, and Community through fashion and philanthropy

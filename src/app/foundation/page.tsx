@@ -196,10 +196,10 @@ export default function Foundation() {
               </h2>
               <div className="space-y-4 text-green-800 leading-relaxed">
                 <p>
-                  The Munyaradzwe Foundation is a charity organization dedicated to spreading comfort, kindness, and support to the most vulnerable members of our community. Our name, MUNYARADZWE, meaning &ldquo;Be Comforted,&rdquo; embodies the essence of what we do.
+                  Our mission is to bring comfort, hope, and support to those most in need, while inspiring a culture of kindness and volunteerism. This year, we're expanding our outreach by collaborating with educational institutions to engage youth in charitable initiatives, leadership, and community service—planting seeds for a more compassionate future.
                 </p>
                 <p>
-                  Our mission is simple yet powerful: To provide comfort, support, and hope to those who need it most, and to inspire others to join us in making the world a better place. We believe that it is a true blessing to give.
+                  The MUNYARADZWE Foundation is about more than aid—it's about fostering a world where everyone feels supported and valued. Your support helps us extend our reach and deepen our impact. Join us in creating a more compassionate and inclusive future.
                 </p>
                 <p>
                   We are committed to addressing the immediate needs of the underprivileged, the homeless, and the abandoned, but we also seek long-term solutions by fostering a culture of kindness, giving, and volunteerism.
@@ -214,6 +214,172 @@ export default function Foundation() {
                 style={{ boxShadow: 'none' }}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="text-center mb-16">
+            <h2 className="font-syne text-4xl font-bold text-gray-900 mb-6">
+              Our Leadership Team
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              A brilliant and vibrant team of young professionals who share a passion for service and transformation.
+            </p>
+          </div>
+
+          {/* Team Members Grid - Including Christabel */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Christabel - Founder */}
+            <Card className="bg-white border border-gray-200 hover:border-emerald-400 transition-all duration-300" style={{ boxShadow: 'none' }}>
+              <div className="relative aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-emerald-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">C</span>
+                    </div>
+                    <p className="text-emerald-800 font-syne text-sm">Founder & Head</p>
+                  </div>
+                </div>
+              </div>
+              <CardBody className="p-6">
+                <h4 className="font-syne text-xl font-bold text-gray-900 mb-2">
+                  Christabel
+                </h4>
+                <p className="text-emerald-700 font-semibold text-sm mb-3">
+                  Founder & Philanthropist
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Christabel, the founder and head of the Foundation, is a philanthropist and welfare activist with a strong passion for community impact. Her academic background in Financial Accounting and Real Estate has been redirected toward ensuring communities gain access to fair funding and improved welfare.
+                </p>
+              </CardBody>
+            </Card>
+            {/* Bruce Hwenga */}
+            <Card className="bg-white border border-gray-200 hover:border-emerald-400 transition-all duration-300" style={{ boxShadow: 'none' }}>
+              <div className="relative aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">BH</span>
+                    </div>
+                    <p className="text-blue-800 font-syne text-sm">Social Engagement</p>
+                  </div>
+                </div>
+              </div>
+              <CardBody className="p-6">
+                <h4 className="font-syne text-xl font-bold text-gray-900 mb-2">
+                  Bruce Hwenga
+                </h4>
+                <p className="text-emerald-700 font-semibold text-sm mb-3">
+                  Social Engagement & Motivational Speaker
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  An award-winning speaker and a distinguished member of the Maycdo Under 30 Fellowship (2020), Bruce is also listed in the 2025 Africa Emerging Brands. His powerful voice and leadership in youth engagement are key assets to the Foundation's outreach.
+                </p>
+              </CardBody>
+            </Card>
+
+            {/* Ralph Mare */}
+            <Card className="bg-white border border-gray-200 hover:border-emerald-400 transition-all duration-300" style={{ boxShadow: 'none' }}>
+              <div className="relative aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">RM</span>
+                    </div>
+                    <p className="text-purple-800 font-syne text-sm">Media & Engagement</p>
+                  </div>
+                </div>
+              </div>
+              <CardBody className="p-6">
+                <h4 className="font-syne text-xl font-bold text-gray-900 mb-2">
+                  Ralph Mare
+                </h4>
+                <p className="text-emerald-700 font-semibold text-sm mb-3">
+                  Social Engagement & Media
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  A vibrant spirit dedicated to community building, Ralph uses his tertiary education and media expertise to drive awareness and connection through storytelling and digital engagement.
+                </p>
+              </CardBody>
+            </Card>
+
+            {/* Elaine Rutendo Mafemba */}
+            <Card className="bg-white border border-gray-200 hover:border-emerald-400 transition-all duration-300" style={{ boxShadow: 'none' }}>
+              <div className="relative aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-pink-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">EM</span>
+                    </div>
+                    <p className="text-pink-800 font-syne text-sm">Administration</p>
+                  </div>
+                </div>
+              </div>
+              <CardBody className="p-6">
+                <h4 className="font-syne text-xl font-bold text-gray-900 mb-2">
+                  Elaine Rutendo Mafemba
+                </h4>
+                <p className="text-emerald-700 font-semibold text-sm mb-3">
+                  Welfare & Administration
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  With a degree in Banking and Finance, Elaine plays a vital role in managing welfare logistics and administrative systems to ensure smooth operations across programs.
+                </p>
+              </CardBody>
+            </Card>
+
+            {/* Linda */}
+            <Card className="bg-white border border-gray-200 hover:border-emerald-400 transition-all duration-300" style={{ boxShadow: 'none' }}>
+              <div className="relative aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-teal-100 to-teal-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-teal-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">L</span>
+                    </div>
+                    <p className="text-teal-800 font-syne text-sm">Welfare & Provision</p>
+                  </div>
+                </div>
+              </div>
+              <CardBody className="p-6">
+                <h4 className="font-syne text-xl font-bold text-gray-900 mb-2">
+                  Linda
+                </h4>
+                <p className="text-emerald-700 font-semibold text-sm mb-3">
+                  Welfare & Provision
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  A highly qualified professional in Community Development, Linda holds a Master's in Human Rights, Peace and Development and a PhD in Social and Behavioural Sciences. Her extensive academic and practical knowledge enriches our efforts in human welfare and rights-based development.
+                </p>
+              </CardBody>
+            </Card>
+
+            {/* Chido Gutsa */}
+            <Card className="bg-white border border-gray-200 hover:border-emerald-400 transition-all duration-300" style={{ boxShadow: 'none' }}>
+              <div className="relative aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-orange-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">CG</span>
+                    </div>
+                    <p className="text-orange-800 font-syne text-sm">Engagement</p>
+                  </div>
+                </div>
+              </div>
+              <CardBody className="p-6">
+                <h4 className="font-syne text-xl font-bold text-gray-900 mb-2">
+                  Chido Gutsa
+                </h4>
+                <p className="text-emerald-700 font-semibold text-sm mb-3">
+                  Engagement & Provision
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Chido brings hands-on knowledge in financial management, holding a Diploma in Accounting. She supports engagement initiatives while ensuring effective resource allocation and transparency.
+                </p>
+              </CardBody>
+            </Card>
           </div>
         </div>
       </section>
@@ -411,23 +577,32 @@ export default function Foundation() {
         </div>
       </section>
 
-      {/* Youth Empowerment with Image */}
+      {/* Youth Empowerment - Kindness Starts with You */}
       <section className="py-20 bg-emerald-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-16">
+            <h2 className="font-syne text-4xl font-bold text-emerald-900 mb-6">
+              Empowering the Youth: Kindness Starts with You
+            </h2>
+            <p className="text-xl text-emerald-700 max-w-4xl mx-auto">
+              At the MUNYARADZWE Foundation, we believe that young people have the power to change the world—not someday, but right now.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="font-syne text-4xl font-bold text-emerald-900 mb-6">
-                Empowering the Youth
-              </h2>
               <div className="space-y-4 text-emerald-800 leading-relaxed">
                 <p>
-                  The Munyaradzwe Foundation believes that the future belongs to the youth. That&apos;s why we are reaching out to educational institutions—schools, colleges, and universities—to empower young people who are eager to make a difference in the world.
+                  That's why we're working with schools, colleges, and universities to help students step into purpose through kindness, leadership, and community service.
                 </p>
                 <p>
-                  Through partnerships with schools and universities, we create volunteer opportunities, provide leadership development platforms, and organize social awareness workshops that educate students on the importance of empathy, kindness, and social responsibility.
+                  Whether it's helping children in need, supporting the elderly, or leading awareness campaigns, we're giving young people the tools and support to make a real difference in their own communities.
                 </p>
                 <p>
-                  By investing in the youth today, we are building a stronger, kinder, and more compassionate tomorrow.
+                  We're not just teaching charity—we're building confidence, empathy, and courage.
+                </p>
+                <p>
+                  This movement is inspired by the life of Garry Mapanzure, a young visionary who believed in spreading love and light. His legacy reminds us that one person really can spark change. Now, we're passing that torch to the next generation.
                 </p>
               </div>
             </div>
@@ -438,6 +613,94 @@ export default function Foundation() {
                 className="w-full h-80 object-cover border border-emerald-200"
                 style={{ boxShadow: 'none' }}
               />
+            </div>
+          </div>
+
+          {/* Call to Action for Youth */}
+          <div className="bg-emerald-900 rounded-2xl p-12 text-center mb-16">
+            <h3 className="font-syne text-3xl font-bold text-white mb-6">
+              If you're a student, teacher, or youth leader—this is your invitation to join us.
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="text-emerald-100">
+                <h4 className="font-syne text-xl font-bold mb-2">Volunteer</h4>
+                <p>Join our programs and make a direct impact</p>
+              </div>
+              <div className="text-emerald-100">
+                <h4 className="font-syne text-xl font-bold mb-2">Lead a Project</h4>
+                <p>Design and implement your own community initiative</p>
+              </div>
+              <div className="text-emerald-100">
+                <h4 className="font-syne text-xl font-bold mb-2">Be the Reason</h4>
+                <p>Someone feels seen, heard, and loved</p>
+              </div>
+            </div>
+            <p className="text-emerald-200 text-lg mb-6">
+              Because comfort begins with connection. And that connection begins with you.
+            </p>
+            <Button
+              onClick={() => {
+                const message = "Hi! I'm a young person interested in joining the MUNYARADZWE Foundation youth programs. Please tell me how I can get involved.";
+                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+              }}
+              className="bg-white text-emerald-900 font-syne px-8 py-3 tracking-wide hover:bg-emerald-50 transition-all duration-200"
+              style={{ boxShadow: 'none' }}
+            >
+              Join the Movement
+            </Button>
+          </div>
+
+          {/* Creating Changemakers */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <Image
+                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&h=500&fit=crop&crop=center"
+                alt="Youth Leadership Development"
+                className="w-full h-80 object-cover border border-emerald-200"
+                style={{ boxShadow: 'none' }}
+              />
+            </div>
+            <div>
+              <h3 className="font-syne text-3xl font-bold text-emerald-900 mb-6">
+                Creating Changemakers: What's Next
+              </h3>
+              <div className="space-y-4 text-emerald-800 leading-relaxed">
+                <p>
+                  Our goal is not just to involve youth in our programs but to equip them to design and lead their own community projects, from neighborhood contributions to care home partnerships to youth mental health awareness drives.
+                </p>
+                <div className="bg-white p-6 rounded-lg border border-emerald-200">
+                  <h4 className="font-syne text-xl font-bold text-emerald-900 mb-4">In 2025 and beyond, we aim to:</h4>
+                  <ul className="space-y-3 text-emerald-800">
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Launch Youth Programs where students represent MUNYARADZWE in their schools and communities</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Offer certification and mentorship for youth volunteers to build their portfolios and grow their confidence</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Host Annual Youth Summits to bring together young leaders across the country to collaborate, share, and dream together</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Together We Empower */}
+          <div className="mt-16 text-center">
+            <h3 className="font-syne text-3xl font-bold text-emerald-900 mb-6">
+              Together, We Empower
+            </h3>
+            <div className="max-w-4xl mx-auto space-y-4 text-emerald-800 leading-relaxed">
+              <p>
+                When we empower the youth, we don't just give them opportunities—we give them purpose. We show them that they matter. That their voices count. That they have the power to be a light in someone else's darkness.
+              </p>
+              <p>
+                The MUNYARADZWE Foundation calls upon educators, parents, mentors, and communities to join us in this mission. Let's raise a generation that is bold enough to care, wise enough to lead, and kind enough to serve.
+              </p>
             </div>
           </div>
         </div>

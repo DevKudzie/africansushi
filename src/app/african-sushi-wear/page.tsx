@@ -110,21 +110,21 @@ const heroSlides = [
     title: "AFRICAN",
     subtitle: "SUSHI WEAR",
     description: "Premium streetwear. Taste the Vision. Live the Legacy.",
-    image: "/images/Model Pics/AS Wear 1.JPG",
+    image: "/images/Model Pics/cut/AS Wear 1.JPG",
     cta: "Shop Collection"
   },
   {
     title: "PREMIUM",
     subtitle: "STREETWEAR",
     description: "Crafted for comfort, culture, and expression.",
-    image: "/images/Model Pics/AS Wear 2.JPG",
+    image: "/images/Model Pics/cut/AS Wear 2.JPG",
     cta: "Shop Collection"
   },
   {
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Heritage and style, designed for today.",
-    image: "/images/Model Pics/AS Wear 3.JPG",
+    image: "/images/Model Pics/cut/AS Wear 3.JPG",
     cta: "Shop Collection"
   }
 ];
@@ -138,7 +138,7 @@ const values = [
     borderColor: "hover:border-slate-300"
   },
   {
-    title: "Cultural Authenticity", 
+    title: "Cultural Authenticity",
     description: "Our designs celebrate genuine African heritage, incorporating traditional elements with modern aesthetics that resonate with contemporary culture.",
     bgColor: "bg-zinc-50",
     hoverColor: "hover:bg-zinc-100",
@@ -291,10 +291,9 @@ export default function AfricanSushiWear() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-              index === modelIndex ? 'translate-x-0' : 
-              index < modelIndex ? '-translate-x-full' : 'translate-x-full'
-            }`}
+            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${index === modelIndex ? 'translate-x-0' :
+                index < modelIndex ? '-translate-x-full' : 'translate-x-full'
+              }`}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -358,9 +357,8 @@ export default function AfricanSushiWear() {
             <button
               key={index}
               onClick={() => setModelIndex(index)}
-              className={`w-12 h-1 transition-all sharp-edges ${
-                index === modelIndex ? 'bg-pearl' : 'bg-pearl/40'
-              }`}
+              className={`w-12 h-1 transition-all sharp-edges ${index === modelIndex ? 'bg-pearl' : 'bg-pearl/40'
+                }`}
             />
           ))}
         </div>
@@ -370,41 +368,6 @@ export default function AfricanSushiWear() {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-zinc-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           {/* Removed duplicate model slider per request */}
-
-          {/* Filters */}
-          <div className="mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
-            <Input
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search products…"
-              className="sharp-edges"
-            />
-            <Select selectedKeys={[garmentType]} onChange={(e) => setGarmentType(e.target.value)} className="sharp-edges">
-              <SelectItem key="All">All Garments</SelectItem>
-              <SelectItem key="Hoodies">Hoodies</SelectItem>
-              <SelectItem key="T-Shirts">T‑Shirts</SelectItem>
-              <SelectItem key="Sweatshirts">Sweatshirts</SelectItem>
-              <SelectItem key="Outerwear">Outerwear</SelectItem>
-            </Select>
-            <Select selectedKeys={[priceFilter]} onChange={(e) => setPriceFilter(e.target.value)} className="sharp-edges">
-              <SelectItem key="All">All Prices</SelectItem>
-              <SelectItem key="35">$35</SelectItem>
-              <SelectItem key="40">$40</SelectItem>
-              <SelectItem key="75">$75</SelectItem>
-              <SelectItem key="85">$85</SelectItem>
-              <SelectItem key="90">$90</SelectItem>
-              <SelectItem key="150">$150</SelectItem>
-            </Select>
-            <Select selectedKeys={[selectedCategory]} onChange={(e) => setSelectedCategory(e.target.value)} className="sharp-edges">
-              <SelectItem key="All">All T‑Shirt Categories</SelectItem>
-              <SelectItem key="LOVE">LOVE</SelectItem>
-              <SelectItem key="CONSOLIDATION">CONSOLIDATION</SelectItem>
-              <SelectItem key="HOPE">HOPE</SelectItem>
-              <SelectItem key="FAITH">FAITH</SelectItem>
-              <SelectItem key="VIBES ON VIBES">VIBES ON VIBES</SelectItem>
-              <SelectItem key="NOVUS AFRICA MAP">NOVUS AFRICA MAP</SelectItem>
-            </Select>
-          </div>
           <div className="text-center mb-16">
             <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-6">
               Current Collection
@@ -454,7 +417,7 @@ export default function AfricanSushiWear() {
               More Launching Soon
             </h3>
             <p className="text-lg text-zinc-600 mb-6 max-w-2xl mx-auto">
-              We&apos;re constantly creating new pieces that celebrate African heritage. 
+              We&apos;re constantly creating new pieces that celebrate African heritage.
               Stay tuned for exciting additions to our collection.
             </p>
             <Button
@@ -473,6 +436,9 @@ export default function AfricanSushiWear() {
       {/* T-Shirt Filters + Collections */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
+
+          <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-10 text-center">T‑Shirt Collections</h2>
+          <p className="text-center text-zinc-600 mb-12">Prices in USD. “Kuhadhira” and “zvichanaka chete” are $40; all other tees are $35.</p>
           {/* Filters moved here */}
           <div className="mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
             <Input
@@ -500,55 +466,134 @@ export default function AfricanSushiWear() {
               <SelectItem key="NOVUS AFRICA MAP">NOVUS AFRICA MAP</SelectItem>
             </Select>
           </div>
-
-          <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-10 text-center">T‑Shirt Collections</h2>
-          <p className="text-center text-zinc-600 mb-12">Prices in USD. “Kuhadhira” and “zvichanaka chete” are $40; all other tees are $35.</p>
-
           <div className="space-y-16">
-            {tshirtCategories.map((cat, cIdx) => (
-              <div key={cIdx}>
-                <h3 className="font-syne text-2xl font-bold text-zinc-900 mb-6">{cat.name}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {cat.items.map((item, iIdx) => {
-                    const price = getTshirtPrice(item.title);
-                    return (
-                      <Card key={`${cIdx}-${iIdx}`} className="bg-white border border-zinc-200 hover:border-zinc-400 transition-all duration-300 sharp-edges">
-                        <div className="relative aspect-square overflow-hidden">
-                          <NextImage src={item.src} alt={item.title} fill className="object-cover" />
-                          <div className="absolute inset-0 bg-black/0 hover:bg-black/25 transition-colors duration-300" />
-                        </div>
-                        <CardBody className="p-4">
-                          <h4 className="font-syne text-sm font-bold text-zinc-900 mb-1 line-clamp-2">{item.title}</h4>
-                          <div className="flex items-center justify-between">
-                            <span className="font-syne text-zinc-900 font-bold">{price}</span>
-                            <div className="flex gap-2">
-                              <Button
-                                isIconOnly
-                                className="bg-zinc-900 text-white sharp-edges"
-                                onClick={() => openTshirtLightbox(item)}
-                              >
-                                <Eye className="w-4 h-4" />
-                              </Button>
-                              <Button
-                                variant="bordered"
-                                className="border-zinc-300 text-zinc-700 sharp-edges"
-                                onClick={() => {
-                                  const message = `Hi! I'm interested in the T‑Shirt: ${item.title} (${price}). Please provide sizes, availability and delivery options.`;
-                                  window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
-                                  toast.success('Redirecting to WhatsApp...');
-                                }}
-                              >
-                                Order
-                              </Button>
+            {tshirtCategories
+              .filter(cat => {
+                // Filter by category
+                if (selectedCategory !== "All" && cat.name !== selectedCategory) {
+                  return false;
+                }
+                return true;
+              })
+              .map((cat, cIdx) => {
+                // Filter items within each category
+                const filteredItems = cat.items.filter(item => {
+                  const price = getTshirtPrice(item.title);
+                  const priceValue = parseInt(price.replace('$', ''));
+                  
+                  // Search filter
+                  if (searchQuery && !item.title.toLowerCase().includes(searchQuery.toLowerCase())) {
+                    return false;
+                  }
+                  
+                  // Garment type filter
+                  if (garmentType !== "All" && garmentType !== "T-Shirts") {
+                    return false;
+                  }
+                  
+                  // Price filter
+                  if (priceFilter !== "All" && priceValue !== parseInt(priceFilter)) {
+                    return false;
+                  }
+                  
+                  return true;
+                });
+
+                // Only show categories that have items after filtering
+                if (filteredItems.length === 0) {
+                  return null;
+                }
+
+                return (
+                  <div key={cIdx}>
+                    <h3 className="font-syne text-2xl font-bold text-zinc-900 mb-6">{cat.name}</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                      {filteredItems.map((item, iIdx) => {
+                        const price = getTshirtPrice(item.title);
+                        return (
+                          <Card key={`${cIdx}-${iIdx}`} className="bg-white border border-zinc-200 hover:border-zinc-400 transition-all duration-300 sharp-edges">
+                            <div className="relative aspect-square overflow-hidden">
+                              <NextImage src={item.src} alt={item.title} fill className="object-cover" />
+                              <div className="absolute inset-0 bg-black/0 hover:bg-black/25 transition-colors duration-300" />
                             </div>
-                          </div>
-                        </CardBody>
-                      </Card>
-                    );
-                  })}
+                            <CardBody className="p-4">
+                              <h4 className="font-syne text-sm font-bold text-zinc-900 mb-1 line-clamp-2">{item.title}</h4>
+                              <div className="flex items-center justify-between">
+                                <span className="font-syne text-zinc-900 font-bold">{price}</span>
+                                <div className="flex gap-2">
+                                  <Button
+                                    isIconOnly
+                                    className="bg-zinc-900 text-white sharp-edges"
+                                    onClick={() => openTshirtLightbox(item)}
+                                  >
+                                    <Eye className="w-4 h-4" />
+                                  </Button>
+                                  <Button
+                                    variant="bordered"
+                                    className="border-zinc-300 text-zinc-700 sharp-edges"
+                                    onClick={() => {
+                                      const message = `Hi! I'm interested in the T‑Shirt: ${item.title} (${price}). Please provide sizes, availability and delivery options.`;
+                                      window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                                      toast.success('Redirecting to WhatsApp...');
+                                    }}
+                                  >
+                                    Order
+                                  </Button>
+                                </div>
+                              </div>
+                            </CardBody>
+                          </Card>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })
+              .filter(Boolean) // Remove null entries from categories with no items
+            }
+            
+            {/* No results message */}
+            {tshirtCategories.every(cat => {
+              const filteredItems = cat.items.filter(item => {
+                const price = getTshirtPrice(item.title);
+                const priceValue = parseInt(price.replace('$', ''));
+                
+                if (searchQuery && !item.title.toLowerCase().includes(searchQuery.toLowerCase())) {
+                  return false;
+                }
+                if (garmentType !== "All" && garmentType !== "T-Shirts") {
+                  return false;
+                }
+                if (priceFilter !== "All" && priceValue !== parseInt(priceFilter)) {
+                  return false;
+                }
+                if (selectedCategory !== "All" && cat.name !== selectedCategory) {
+                  return false;
+                }
+                return true;
+              });
+              return filteredItems.length === 0;
+            }) && (
+              <div className="text-center py-16">
+                <div className="bg-zinc-100 rounded-lg p-8 max-w-md mx-auto">
+                  <h3 className="font-syne text-xl font-bold text-zinc-700 mb-4">No T-Shirts Found</h3>
+                  <p className="text-zinc-600 mb-6">
+                    No products match your current filters. Try adjusting your search or filter criteria.
+                  </p>
+                  <Button
+                    className="bg-zinc-900 text-white font-syne px-6 py-2 sharp-edges"
+                    onClick={() => {
+                      setSearchQuery("");
+                      setSelectedCategory("All");
+                      setGarmentType("All");
+                      setPriceFilter("All");
+                    }}
+                  >
+                    Clear All Filters
+                  </Button>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -565,17 +610,17 @@ export default function AfricanSushiWear() {
                 </h2>
                 <div className="space-y-4 text-amber-800 leading-relaxed">
                   <p>
-                    When university resources ran thin, Garry Mapanzure survived on affordable sushi meals, 
-                    fueling both his body and his creative vision. This humble sustenance became the unlikely 
+                    When university resources ran thin, Garry Mapanzure survived on affordable sushi meals,
+                    fueling both his body and his creative vision. This humble sustenance became the unlikely
                     foundation for a brand that would honor African heritage through contemporary fashion.
                   </p>
                   <p>
-                    &ldquo;African Sushi Wear&rdquo; represents the beautiful contradiction of necessity and luxury, 
-                    tradition and innovation. Each garment is crafted to tell stories of resilience, 
+                    &ldquo;African Sushi Wear&rdquo; represents the beautiful contradiction of necessity and luxury,
+                    tradition and innovation. Each garment is crafted to tell stories of resilience,
                     cultural pride, and the journey from struggle to success.
                   </p>
                   <p>
-                    Today, every purchase supports the Munyaradzwe Foundation, ensuring that 
+                    Today, every purchase supports the Munyaradzwe Foundation, ensuring that
                     Garry&apos;s legacy of giving back continues to touch lives across communities.
                   </p>
                 </div>
@@ -610,18 +655,17 @@ export default function AfricanSushiWear() {
               The Creative Team
             </h2>
             <p className="text-xl text-zinc-700 max-w-3xl mx-auto">
-              No vision comes to life in isolation. Meet the talented individuals who helped bring 
+              No vision comes to life in isolation. Meet the talented individuals who helped bring
               Garry&apos;s dream to reality through their expertise and dedication.
             </p>
           </div>
-          
+
           <div className="space-y-12">
             {designers.map((designer, index) => (
-              <div 
-                key={index} 
-                className={`flex flex-col lg:flex-row gap-8 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
+              <div
+                key={index}
+                className={`flex flex-col lg:flex-row gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Profile Section */}
                 <div className="lg:w-1/3">
@@ -631,7 +675,7 @@ export default function AfricanSushiWear() {
                         {designer.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
                       </span>
                     </div>
-                    
+
                     <h3 className="font-syne text-2xl font-bold text-zinc-900 mb-2">
                       {designer.name}
                     </h3>
@@ -651,7 +695,7 @@ export default function AfricanSushiWear() {
                     <blockquote className="text-lg text-zinc-700 leading-relaxed font-light italic">
                       &ldquo;{designer.description}&rdquo;
                     </blockquote>
-                    
+
                     {/* Decorative element */}
                     <div className="mt-6 flex items-center gap-2">
                       <div className="w-12 h-0.5 bg-zinc-900"></div>
@@ -671,22 +715,22 @@ export default function AfricanSushiWear() {
           <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-12 text-center">
             What We Stand For
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className={`${value.bgColor} border border-stone-200 ${value.borderColor} ${value.hoverColor} transition-all duration-300 sharp-edges group cursor-pointer transform hover:-translate-y-2`}
               >
                 <CardBody className="p-8 text-center relative overflow-hidden">
                   {/* Subtle gradient accent */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zinc-400 to-stone-400 group-hover:from-zinc-600 group-hover:to-stone-600 transition-all duration-300"></div>
-                  
+
                   {/* Icon placeholder */}
                   <div className="w-12 h-12 bg-zinc-900 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-white font-syne font-bold text-lg">{index + 1}</span>
                   </div>
-                  
+
                   <h3 className="font-syne text-xl font-bold text-zinc-900 mb-4 group-hover:scale-105 transition-transform duration-300">
                     {value.title}
                   </h3>
@@ -709,7 +753,7 @@ export default function AfricanSushiWear() {
           <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
             Wear your heritage with pride. Every piece tells a story. Every purchase makes a difference.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-white text-zinc-900 font-syne px-8 py-3 tracking-wide hover:bg-zinc-100 transition-all duration-200 sharp-edges"
@@ -740,7 +784,7 @@ export default function AfricanSushiWear() {
           slides={currentProductImages}
           index={lightboxIndex}
           styles={{
-            container: { 
+            container: {
               backgroundColor: "rgba(0, 0, 0, 0.9)",
               cursor: "auto"
             },
@@ -758,7 +802,7 @@ export default function AfricanSushiWear() {
           className="lightbox-override"
         />
       </div>
-      
+
       <style jsx global>{`
         .lightbox-override,
         .lightbox-override * {

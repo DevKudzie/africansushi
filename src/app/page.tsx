@@ -12,21 +12,21 @@ const heroSlides = [
     title: "AFRICAN",
     subtitle: "PRIDE",
     description: "Taste the Vision. Live the Legacy.",
-    image: "/images/Model Pics/AS Wear 1.JPG",
+    image: "/images/Model Pics/cut/AS Wear 1.JPG",
     cta: "Discover Collection"
   },
   {
     title: "PREMIUM",
     subtitle: "HERITAGE",
     description: "Authentic African craftsmanship meets modern luxury.",
-    image: "/images/Model Pics/AS Wear 2.JPG",
+    image: "/images/Model Pics/cut/AS Wear 2.JPG",
     cta: "Explore Fabrics"
   },
   {
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Honoring Garry Mapanzure through meaningful impact.",
-    image: "/images/Model Pics/AS Wear 3.JPG",
+    image: "/images/Model Pics/cut/AS Wear 3.JPG",
     cta: "Support Foundation"
   }
 ];
@@ -186,7 +186,7 @@ export default function Home() {
             <div className="premium-card sharp-edges p-8 h-80 relative overflow-hidden group">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/fadhil-abhimantra-tvq_Kkl46q0-unsplash.jpg"
+                  src="/images/Rujeko-fabric.jpg"
                   alt="Rujeko Fabrics"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -242,7 +242,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
             <div className="lg:col-span-2 relative h-64">
               <Image
-                src="/images/2149647305.jpg"
+                src="/images/kiki-silver-dress.jpg"
                 alt="Craftsmanship"
                 fill
                 className="object-cover sharp-edges"

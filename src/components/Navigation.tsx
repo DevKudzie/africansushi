@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import NextImage from "next/image";
 import { usePathname } from "next/navigation";
 import { 
   Navbar, 
@@ -30,6 +31,8 @@ export default function Navigation() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const isRujekoPage = pathname === "/rujeko";
+  const isFoundationPage = pathname === "/foundation";
+  const isContactPage = pathname === "/contact";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,39 +45,57 @@ export default function Navigation() {
   }, []);
 
   const getNavbarStyles = () => {
+    if (isRujekoPage || isFoundationPage || isContactPage) {
+      return isScrolled 
+        ? "bg-pearl/95 border-b border-nude" 
+        : "bg-transparent";
+    }
+    
     if (!isHomePage) {
       return isScrolled 
-        ? "bg-pearl/95 backdrop-blur-md border-b border-nude" 
-        : "bg-pearl/20 backdrop-blur-md";
+        ? "bg-pearl/95 border-b border-nude" 
+        : "bg-transparent";
     }
     
     return isScrolled 
-      ? "bg-pearl/95 backdrop-blur-md border-b border-nude" 
+      ? "bg-pearl/95 border-b border-nude" 
       : "bg-transparent";
   };
 
   const getTextStyles = () => {
-    if (!isHomePage) {
+    if (isRujekoPage || isFoundationPage || isContactPage) {
       return "text-charcoal";
     }
     
-    return isScrolled ? "text-charcoal" : "text-pearl";
+    if (!isHomePage) {
+      return isScrolled ? "text-charcoal" : "text-white";
+    }
+    
+    return isScrolled ? "text-charcoal" : "text-white";
   };
 
   const getBrandStyles = () => {
-    if (!isHomePage) {
-      return "bg-charcoal text-pearl";
+    if (isRujekoPage || isFoundationPage || isContactPage) {
+      return isScrolled ? "bg-charcoal text-pearl" : "bg-charcoal text-pearl";
     }
     
-    return isScrolled ? "bg-charcoal text-pearl" : "bg-pearl text-charcoal";
+    if (!isHomePage) {
+      return isScrolled ? "bg-charcoal text-pearl" : "bg-white text-charcoal";
+    }
+    
+    return isScrolled ? "bg-charcoal text-pearl" : "bg-white text-charcoal";
   };
 
   const getMenuToggleStyles = () => {
-    if (!isHomePage) {
+    if (isRujekoPage || isFoundationPage || isContactPage) {
       return "text-charcoal";
     }
     
-    return isScrolled ? "text-charcoal" : "text-pearl";
+    if (!isHomePage) {
+      return isScrolled ? "text-charcoal" : "text-white";
+    }
+    
+    return isScrolled ? "text-charcoal" : "text-white";
   };
 
   return (
@@ -101,18 +122,20 @@ export default function Navigation() {
               </div>
             ) : (
               <>
-                <div className={`w-12 h-12 ${getBrandStyles()} flex items-center justify-center sharp-edges transition-all duration-300`}>
-                  <span className="font-syne font-bold text-xl">AP</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className={`font-syne text-xl font-bold ${getTextStyles()} transition-colors duration-300`}>
-                    African Pride
-                  </span>
-                  <span className={`text-xs font-manrope transition-colors duration-300 ${
-                    !isHomePage ? "text-stone" : isScrolled ? "text-stone" : "text-pearl/70"
-                  }`}>
-                    Taste the Vision. Live the Legacy.
-                  </span>
+                <div className="h-12 flex items-center">
+                  <NextImage
+                    src={`/images/${
+                      isFoundationPage ? "MUNYARADZWE-LOGO.png" :
+                      isRujekoPage ? "Africans-pride-logo-horizontal.png" :
+                      isContactPage ? "Africans-pride-logo-horizontal.png" :
+                      !isHomePage ? (isScrolled ? "Africans-pride-logo-horizontal.png" : "Africans-pride-logo-white-text.png") :
+                      isScrolled ? "Africans-pride-logo-horizontal.png" : "Africans-pride-logo-white-text.png"
+                    }`}
+                    alt={isFoundationPage ? "Munyaradzwe Foundation" : isRujekoPage ? "Rujeko" : "African Pride"}
+                    width={180}
+                    height={48}
+                    className="h-12 w-auto object-contain transition-all duration-300"
+                  />
                 </div>
               </>
             )}
@@ -129,12 +152,12 @@ export default function Navigation() {
               className={`font-manrope text-sm font-medium transition-all duration-300 relative group ${
                 pathname === item.href
                   ? getTextStyles()
-                  : `${!isHomePage ? "text-stone hover:text-charcoal" : isScrolled ? "text-stone hover:text-charcoal" : "text-pearl/80 hover:text-pearl"}`
+                  : `${isRujekoPage || isFoundationPage || isContactPage ? "text-stone hover:text-charcoal" : !isHomePage ? (isScrolled ? "text-stone hover:text-charcoal" : "text-white/80 hover:text-white") : isScrolled ? "text-stone hover:text-charcoal" : "text-white/80 hover:text-white"}`
               }`}
             >
               {item.name}
               <span className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
-                !isHomePage ? "bg-charcoal" : isScrolled ? "bg-charcoal" : "bg-pearl"
+                isRujekoPage || isFoundationPage || isContactPage ? "bg-charcoal" : !isHomePage ? (isScrolled ? "bg-charcoal" : "bg-white") : isScrolled ? "bg-charcoal" : "bg-white"
               } ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"}`} />
             </Link>
           </NavbarItem>
@@ -148,8 +171,8 @@ export default function Navigation() {
             as={Link}
             href="/contact"
             className={`font-manrope font-medium px-6 py-2 transition-all sharp-edges ${
-              !isHomePage ? "bg-charcoal text-pearl hover:bg-ash" : 
-              isScrolled ? "bg-charcoal text-pearl hover:bg-ash" : "bg-pearl text-charcoal hover:bg-mist"
+              isRujekoPage || isFoundationPage || isContactPage ? "bg-charcoal text-pearl hover:bg-ash" : !isHomePage ? (isScrolled ? "bg-charcoal text-pearl hover:bg-ash" : "bg-white text-charcoal hover:bg-gray-100") : 
+              isScrolled ? "bg-charcoal text-pearl hover:bg-ash" : "bg-white text-charcoal hover:bg-gray-100"
             }`}
           >
             Get In Touch
@@ -165,8 +188,8 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       <NavbarMenu className={`pt-8 sharp-edges border-t transition-all duration-300 ${
-        !isHomePage ? "bg-pearl/95 backdrop-blur-md border-nude" : 
-        isScrolled ? "bg-pearl/95 backdrop-blur-md border-nude" : "bg-pearl/90 backdrop-blur-lg border-pearl/30"
+        isRujekoPage || isFoundationPage || isContactPage ? "bg-pearl/95 border-nude" : !isHomePage ? (isScrolled ? "bg-pearl/95 border-nude" : "bg-black/90 border-white/30") : 
+        isScrolled ? "bg-pearl/95 border-nude" : "bg-black/90 border-white/30"
       }`}>
         <div className="space-y-2">
           {navigationItems.map((item, index) => (
@@ -175,15 +198,15 @@ export default function Navigation() {
                 href={item.href}
                 className={`w-full font-manrope text-lg py-4 px-4 rounded-lg border-b border-transparent transition-all duration-200 relative group ${
                   pathname === item.href
-                    ? `font-semibold ${getTextStyles()} bg-charcoal/5`
-                    : `${!isHomePage ? "text-stone hover:text-charcoal hover:bg-mist" : isScrolled ? "text-stone hover:text-charcoal hover:bg-mist" : "text-ash hover:text-charcoal hover:bg-pearl/50"}`
+                    ? `font-semibold ${getTextStyles()} ${isRujekoPage || isFoundationPage || isContactPage ? "bg-charcoal/5" : isScrolled ? "bg-charcoal/5" : "bg-white/10"}`
+                    : `${isRujekoPage || isFoundationPage || isContactPage ? "text-stone hover:text-charcoal hover:bg-mist" : !isHomePage ? (isScrolled ? "text-stone hover:text-charcoal hover:bg-mist" : "text-white hover:text-white hover:bg-white/10") : isScrolled ? "text-stone hover:text-charcoal hover:bg-mist" : "text-white hover:text-white hover:bg-white/10"}`
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="relative z-10">{item.name}</span>
                 {pathname === item.href && (
                   <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 ${
-                    !isHomePage ? "bg-charcoal" : isScrolled ? "bg-charcoal" : "bg-charcoal"
+                    isRujekoPage || isFoundationPage || isContactPage ? "bg-charcoal" : !isHomePage ? (isScrolled ? "bg-charcoal" : "bg-white") : isScrolled ? "bg-charcoal" : "bg-white"
                   } rounded-r transition-all duration-200`} />
                 )}
               </Link>
@@ -196,8 +219,8 @@ export default function Navigation() {
             as={Link}
             href="/contact"
             className={`w-full font-manrope font-medium py-4 transition-all sharp-edges group relative overflow-hidden ${
-              !isHomePage ? "bg-charcoal text-pearl hover:bg-ash" : 
-              isScrolled ? "bg-charcoal text-pearl hover:bg-ash" : "bg-charcoal text-pearl hover:bg-ash"
+              isRujekoPage || isFoundationPage || isContactPage ? "bg-charcoal text-pearl hover:bg-ash" : !isHomePage ? (isScrolled ? "bg-charcoal text-pearl hover:bg-ash" : "bg-white text-charcoal hover:bg-gray-100") : 
+              isScrolled ? "bg-charcoal text-pearl hover:bg-ash" : "bg-white text-charcoal hover:bg-gray-100"
             }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -211,11 +234,11 @@ export default function Navigation() {
 
         {/* Mobile Menu Footer */}
         <div className={`pt-6 pb-4 mt-6 border-t transition-colors duration-300 ${
-          !isHomePage ? "border-nude" : isScrolled ? "border-nude" : "border-pearl/30"
+          isRujekoPage || isFoundationPage ? "border-nude" : !isHomePage ? (isScrolled ? "border-nude" : "border-white/30") : isScrolled ? "border-nude" : "border-white/30"
         }`}>
           <div className="text-center">
             <p className={`text-sm font-manrope transition-colors duration-300 ${
-              !isHomePage ? "text-stone" : isScrolled ? "text-stone" : "text-ash"
+              isRujekoPage || isFoundationPage ? "text-stone" : !isHomePage ? (isScrolled ? "text-stone" : "text-white/70") : isScrolled ? "text-stone" : "text-white/70"
             }`}>
               Taste the Vision. Live the Legacy.
             </p>

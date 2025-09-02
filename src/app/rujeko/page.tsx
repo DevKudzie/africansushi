@@ -7,119 +7,87 @@ import Layout from "@/components/Layout";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
 
-const fabricCollections = [
+const totemCollections = [
   {
     id: 1,
-    name: "Honeycomb Heritage",
-    price: "$35/yard",
-    image: "/images/rujeko-logo.png",
-    description: "Sacred geometry meets African tradition. The honeycomb pattern represents unity in diversity.",
-    longDescription: "This exquisite fabric collection draws inspiration from the ancient symbolism of the honeycomb, representing the perfect harmony of community and individual purpose. Each thread is carefully woven to tell the story of African unity, where diverse cultures come together to create something beautiful and enduring.",
-    pattern: "Honeycomb with Clan Totems",
-    colors: ["Gold & Black", "Red & White", "Blue & Gold"],
-    occasions: ["Weddings", "Cultural Events", "Traditional Ceremonies"],
-    badge: "Signature",
-    materials: "100% Cotton with Wax Print",
-    minOrder: "5 yards"
+    name: "Mhukahuru (Nzou / Elephant)",
+    image: "/images/totems/elephant mockup 1.jpg",
+    totem: "Nzou (Elephant)",
+    praise: "Samanyanga - the one with tusks",
+    description: "The Nzou clan, also known as Samanyanga, is deeply respected across Zimbabwe, particularly among Karanga and Zezuru communities. The elephant signifies wisdom, protection of kin, and the ability to lead with gentle but unshakable authority.",
+    symbolism: "The design features a regal elephant head motif framed by intricate geometric patterns inspired by Great Zimbabwe's iconic architecture. The zigzag and diamond motifs symbolize resilience, sacred order, and cultural continuity—echoing the enduring legacy of Nzou ancestors.",
+    communities: ["Karanga", "Zezuru"],
+    qualities: ["Wisdom", "Protection", "Leadership", "Authority"]
   },
   {
     id: 2,
-    name: "Clan Totem Collection",
-    price: "$40/yard",
-    image: "/images/gal-1.jpg",
-    description: "Celebrate your lineage with fabrics featuring traditional Zimbabwean clan totems.",
-    longDescription: "Honor your ancestral connections with this premium collection featuring authentic Zimbabwean clan totems. Each design is researched and crafted with respect for traditional meanings, creating wearable heritage that connects past and present.",
-    pattern: "Animal Totems on Geometric Base",
-    colors: ["Earth Tones", "Royal Blue", "Sunset Orange"],
-    occasions: ["Family Gatherings", "Heritage Days", "Cultural Pride"],
-    badge: "Custom",
-    materials: "Premium Cotton Blend",
-    minOrder: "3 yards"
+    name: "Vahera (Mhofu/Shava/Eland)",
+    image: "/images/totems/eland mockup 1.jpg",
+    totem: "Shava (Eland)",
+    praise: "Museyamwa - the one who remains behind",
+    description: "This fabric is a visual tribute to the Shava totem, one of the most respected and widespread totems in Zimbabwe. The Shava (eland) totem is associated with royalty, leadership, diplomacy, and wisdom, traditionally linked to descendants of the Rozvi and Munhumutapa civilizations.",
+    symbolism: "The fabric features a noble eland head motif, capturing the animal's calm strength and quiet authority. It is surrounded by bold geometric patterns drawn from Great Zimbabwe's stonework, especially zigzags symbolizing resilience and diamond shapes representing continuity and lineage.",
+    communities: ["Rozvi", "Munhumutapa descendants"],
+    qualities: ["Royalty", "Leadership", "Diplomacy", "Wisdom"]
   },
   {
     id: 3,
-    name: "Great Zimbabwe Zigzag",
-    price: "$45/yard",
-    image: "/images/gal-3.jpg",
-    description: "Inspired by the ancient stone architecture of Great Zimbabwe. Strength and endurance woven into fabric.",
-    longDescription: "Drawing from the magnificent stone structures of Great Zimbabwe, this collection embodies the architectural mastery and cultural sophistication of our ancestors. The zigzag patterns mirror the precise stonework that has stood for centuries.",
-    pattern: "Chevron with Historical Motifs",
-    colors: ["Stone Gray", "Sunset Gold", "Heritage Brown"],
-    occasions: ["Independence Day", "National Events", "Cultural Exhibitions"],
-    badge: "Heritage",
-    materials: "Heavy Cotton Canvas",
-    minOrder: "4 yards"
+    name: "Murambwi (Shumba/Lion)",
+    image: "/images/totems/lion mockup 1.jpg",
+    totem: "Shumba (Lion)",
+    praise: "Mutapwa wemagamba - he who walks among warriors",
+    description: "The Shumba (lion) totem, one of the most iconic and noble symbols in Zimbabwean totemic tradition. The Shumba clan is revered across various ethnic groups—particularly the Karanga, Zezuru, and Manyika—and is associated with bravery, kingship, guardianship, and fierce loyalty.",
+    symbolism: "The central motif—a bold, watchful lion's head—represents the king of the wild, a sacred animal known in Shumba culture as the protector of family and land. In oral traditions and clan praise poetry, the Shumba is praised as the symbol of fearlessness and divine authority.",
+    communities: ["Karanga", "Zezuru", "Manyika"],
+    qualities: ["Bravery", "Kingship", "Guardianship", "Loyalty"]
   },
   {
     id: 4,
-    name: "Radiance Collection",
-    price: "$38/yard",
-    image: "/images/gal-4.jpg",
-    description: "Named after Rujeko (radiance), these fabrics shine with the light of African pride.",
-    longDescription: "The signature collection that embodies the radiance of African beauty and pride. Each design captures the luminous spirit of celebration, joy, and the brilliant light that shines from our cultural heritage.",
-    pattern: "Sunburst with Cultural Symbols",
-    colors: ["Bright Gold", "Crimson Red", "Royal Purple"],
-    occasions: ["Celebrations", "Festivals", "Special Events"],
-    badge: "Bestseller",
-    materials: "Luxury Cotton Voile",
-    minOrder: "2 yards"
+    name: "Ngenya (Ngwenya/Crocodile)",
+    image: "/images/totems/croc mockup 1.jpg",
+    totem: "Ngwenya (Crocodile)",
+    praise: "Shoko - the one who moves through water",
+    description: "This fabric is a tribute to the Ngwenya (Crocodile) totem, one of the most revered totems in Zimbabwean culture towards the Karanga people. The crocodile symbolizes strength, leadership, fearlessness, and deep ancestral wisdom.",
+    symbolism: "The totem preserves identity, lineage, and respect for nature. The Ngwenya totem particularly invokes imagery of stealth, power, and silent authority in water—majestic, ancient, and untamed.",
+    communities: ["Karanga"],
+    qualities: ["Strength", "Leadership", "Fearlessness", "Ancestral Wisdom"]
   },
   {
     id: 5,
-    name: "Unity Weave",
-    price: "$42/yard",
-    image: "/images/gal-5.jpg",
-    description: "Interwoven patterns that tell the story of Zimbabwe&apos;s diverse communities coming together.",
-    longDescription: "A masterful representation of Zimbabwe&apos;s cultural diversity, this collection features interlocking patterns that symbolize how different communities strengthen each other when woven together in harmony.",
-    pattern: "Interlocking Patterns",
-    colors: ["Multi-colored", "Earth Palette", "Vibrant Mix"],
-    occasions: ["Unity Day", "Community Events", "Diplomatic Gifts"],
-    badge: "Limited",
-    materials: "Artisan Cotton Weave",
-    minOrder: "6 yards"
-  },
-  {
-    id: 6,
-    name: "Modern Heritage",
-    price: "$36/yard",
-    image: "/images/gal-6.jpg",
-    description: "Contemporary designs that honor the past while embracing the future.",
-    longDescription: "Bridging traditional craftsmanship with contemporary aesthetics, this collection speaks to the modern African who values heritage while embracing innovation. Perfect for today&apos;s fashion-forward cultural expression.",
-    pattern: "Modern Geometric with Traditional Elements",
-    colors: ["Contemporary Blues", "Modern Grays", "Accent Gold"],
-    occasions: ["Modern Fashion", "Business Wear", "Contemporary Style"],
-    badge: "New",
-    materials: "Contemporary Cotton Blend",
-    minOrder: "3 yards"
+    name: "Bambomukunda",
+    image: "/images/totems/Bambomukanda mocup all 4 colours.jpg",
+    totem: "Complementary Design",
+    praise: "Tete - the wise advisor",
+    description: "BAMBOMUKUNDA is a complimentary fabric designed to gracefully support and elevate RUJEKO's totemic collections. Inspired by the respected Zimbabwean Tete (aunt)—a family advisor, mediator, and role model.",
+    symbolism: "This fabric features subtle, flowing patterns and warm, versatile tones that embody quiet strength, wisdom, and nurturing guidance. While free of totem symbols, BAMBOMUKUNDA provides the perfect elegant backdrop for creative styling, honoring the vital role of the Tete in holding families and traditions together.",
+    communities: ["Universal"],
+    qualities: ["Wisdom", "Guidance", "Nurturing", "Support"]
   }
 ];
 
-interface Fabric {
+interface TotemFabric {
   id: number;
   name: string;
-  price: string;
   image: string;
+  totem: string;
+  praise: string;
   description: string;
-  longDescription: string;
-  pattern: string;
-  colors: string[];
-  occasions: string[];
-  badge: string;
-  materials: string;
-  minOrder: string;
+  symbolism: string;
+  communities: string[];
+  qualities: string[];
 }
 
 export default function Rujeko() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [selectedFabric, setSelectedFabric] = useState<Fabric | null>(null);
+  const [selectedFabric, setSelectedFabric] = useState<TotemFabric | null>(null);
 
-  const openFabricDetail = (fabric: Fabric) => {
+  const openFabricDetail = (fabric: TotemFabric) => {
     setSelectedFabric(fabric);
     onOpen();
   };
 
-  const handleWhatsAppOrder = (fabric: Fabric) => {
-    const message = `Hi! I&apos;m interested in ordering the ${fabric.name} fabric at ${fabric.price}. Please provide more details about availability, minimum order quantities, and shipping.`;
+  const handleWhatsAppInquiry = (fabric: TotemFabric) => {
+    const message = `Hi! I'm interested in learning more about the ${fabric.name} fabric from the RUJEKO collection. Could you please share more details about this totem design, available options, and how to place an order?`;
     const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp...');
@@ -155,8 +123,8 @@ export default function Rujeko() {
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px] overflow-hidden sharp-edges border border-orange-200">
                 <NextImage
-                  src="/images/kalpa-mahagamage--eXbTwI0VU0-unsplash.jpg"
-                  alt="Rujeko Heritage Fabric"
+                  src="/images/kik-silver-dress-2.jpg"
+                  alt="Kiki Mapanzure - Designer"
                   fill
                   className="object-cover"
                 />
@@ -179,28 +147,28 @@ export default function Rujeko() {
       {/* Story Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">Our Story</h2>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="font-syne text-3xl font-bold text-orange-900 mb-6">A Fabric with Meaning in Every Thread</h3>
+              <h3 className="font-syne text-3xl font-bold text-orange-900 mb-6">Fabric with a Story in Every Thread</h3>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                RUJEKO is more than a fabric line — it’s a personal and cultural journey. Founded by Zimbabwean designer Kiki Mapanzure, the brand began as a way to preserve stories, heritage, and identity through textiles. For Kiki, fabric speaks where words fall short — becoming a way to honor ancestry and imagine a future filled with pride.
+                RUJEKO is more than a fabric line — it's a personal and cultural journey. Founded by Zimbabwean designer Kiki Mapanzure, the brand began as a way to preserve stories, heritage, and identity through textiles. For Kiki, fabric speaks where words fall short — becoming a way to honor ancestry and imagine a future filled with pride.
               </p>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                At the heart of this story are Zimbabwe’s rich clan totems — powerful animal symbols like Shumba (lion), Nzou (elephant), Mhofu (eland), Hungwe (fish eagle), Soko (monkey), and Shiri (bird) — each representing lineage, character, and belonging. RUJEKO transforms these totems into living art, woven into every design. While these core totems anchor the collection, the brand will also accommodate other totem prints on request, ensuring every wearer sees their own story represented.
+                At the heart of this story are Zimbabwe's rich clan totems — powerful animal symbols like Shumba (lion), Nzou (elephant), Mhofu (eland), Hungwe (fish eagle), Soko (monkey), and Shiri (bird) — each representing lineage, character, and belonging. RUJEKO transforms these totems into living art, woven into every design. While these core totems anchor the collection, the brand will also accommodate other totem prints on request, ensuring every wearer sees their own story represented.
+              </p>
+              <p className="text-neutral-800 leading-relaxed mb-4">
+                Each RUJEKO textile is rich in symbolism, grounded in Zimbabwe's cultural traditions: Honeycomb patterns inspired by African geometry symbolize unity in diversity. Clan totems are woven into designs as ancestral emblems representing family identity and belonging. Zigzag motifs echo the chevron walls of Great Zimbabwe, symbolizing resilience and sacred foundations.
               </p>
               <p className="text-neutral-800 leading-relaxed">
-                RUJEKO means “radiance” — and it’s also the name of Kiki’s late father, a man of honor, leadership, and cultural pride. His legacy is stitched into every design, guiding the brand’s purpose.
+                RUJEKO means "radiance" — and it's also the name of Kiki's late father, a man of honor, leadership, and cultural pride. His legacy is stitched into every design, guiding the brand's purpose.
               </p>
             </div>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative w-full h-96 overflow-hidden sharp-edges border border-orange-200">
                   <NextImage
-                    src="/images/gal-4.jpg"
+                    src="/images/kiki-story-1.jpg"
                     alt="Rujeko Boutique Display"
                     fill
                     className="object-cover"
@@ -208,7 +176,7 @@ export default function Rujeko() {
                 </div>
                 <div className="relative w-full h-96 overflow-hidden sharp-edges border border-orange-200">
                   <NextImage
-                    src="/images/gal-25.jpg"
+                    src="/images/kik-story-2.jpg"
                     alt="Rujeko Our Story Portrait"
                     fill
                     className="object-cover"
@@ -220,70 +188,175 @@ export default function Rujeko() {
         </div>
       </section>
 
-      {/* Fabric Collections */}
+      {/* Totem Collections */}
       <section className="py-20 bg-orange-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
             <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
-              Heritage Collections
+              Totem Heritage Collections
             </h2>
             <p className="text-xl text-orange-800 max-w-3xl mx-auto">
-              Each collection tells a unique story of African heritage and identity.
+              Each design honors the sacred animal totems that define Zimbabwean identity, lineage, and cultural pride.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fabricCollections.map((fabric) => (
-              <Card key={fabric.id} className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
-                <div className="relative aspect-square overflow-hidden">
-                  <NextImage
-                    src={fabric.image}
-                    alt={fabric.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Chip
-                      size="sm"
-                      className="bg-orange-900 text-white font-syne text-xs tracking-wide sharp-edges"
-                    >
-                      {fabric.badge}
-                    </Chip>
+          <div className="space-y-16">
+            {totemCollections.map((fabric, index) => (
+              <div key={fabric.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-cols-2' : ''}`}>
+                {/* Image Section */}
+                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="relative aspect-square overflow-hidden sharp-edges border-2 border-orange-200 bg-white p-4">
+                    <NextImage
+                      src={fabric.image}
+                      alt={fabric.name}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </div>
-                <CardBody className="p-6">
-                  <h3 className="font-syne text-xl font-bold text-orange-900 mb-2 leading-tight">
-                    {fabric.name}
-                  </h3>
-                  
-                  <p className="text-orange-700 text-sm mb-4 leading-relaxed">
-                    {fabric.description}
-                  </p>
-                  
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="font-syne font-bold text-2xl text-orange-900">
-                      {fabric.price}
-                    </span>
-                  </div>
 
-                  <div className="space-y-3">
-                      <Button
-                      className="w-full bg-orange-900 text-white font-syne px-4 py-2 text-sm tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
-                      onClick={() => openFabricDetail(fabric)}
+                {/* Content Section */}
+                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="bg-white border-l-4 border-orange-900 p-8 sharp-edges">
+                    <div className="mb-6">
+                      <h3 className="font-syne text-3xl font-bold text-orange-900 mb-2">
+                        {fabric.name}
+                      </h3>
+                      <p className="text-orange-600 font-medium text-lg italic mb-1">
+                        "{fabric.praise}"
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {fabric.communities.map((community) => (
+                          <Chip 
+                            key={community} 
+                            size="sm" 
+                            className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges"
+                          >
+                            {community}
+                          </Chip>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <p className="text-neutral-800 leading-relaxed">
+                        {fabric.description}
+                      </p>
+                      <p className="text-neutral-700 leading-relaxed text-sm">
+                        <strong>Symbolism:</strong> {fabric.symbolism}
+                      </p>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4 className="font-syne font-bold text-orange-900 mb-3">Sacred Qualities</h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {fabric.qualities.map((quality) => (
+                          <div key={quality} className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-orange-900 sharp-edges"></div>
+                            <span className="text-neutral-700 text-sm">{quality}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Button
+                      className="w-full bg-orange-900 text-white font-syne px-6 py-3 text-lg tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
+                      onClick={() => handleWhatsAppInquiry(fabric)}
                     >
-                      View Details
-                    </Button>
-                      <Button
-                      variant="bordered"
-                      className="w-full border-orange-300 text-orange-800 hover:bg-orange-100 font-syne px-4 py-2 text-sm tracking-wide transition-all duration-200 sharp-edges"
-                        onClick={() => handleWhatsAppOrder(fabric)}
-                    >
-                      Quick Order
+                      Learn More & Inquire
                     </Button>
                   </div>
-                </CardBody>
-              </Card>
+                </div>
+              </div>
             ))}
+          </div>
+
+          {/* Fabric Options Section */}
+          <div className="mt-20 bg-white border border-orange-200 p-8 sharp-edges">
+            <h3 className="font-syne text-2xl font-bold text-orange-900 mb-6 text-center">
+              Fabric Options Available
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-4 bg-orange-50 border border-orange-100 sharp-edges">
+                <h4 className="font-syne font-bold text-orange-900 mb-2">Poly Cotton</h4>
+                <p className="text-orange-700 text-sm">Durable and versatile</p>
+                <p className="font-bold text-orange-900 mt-2">$10/meter</p>
+              </div>
+              <div className="p-4 bg-orange-50 border border-orange-100 sharp-edges">
+                <h4 className="font-syne font-bold text-orange-900 mb-2">100% Cotton</h4>
+                <p className="text-orange-700 text-sm">Premium natural fabric</p>
+                <p className="font-bold text-orange-900 mt-2">$15/meter</p>
+              </div>
+              <div className="p-4 bg-orange-50 border border-orange-100 sharp-edges">
+                <h4 className="font-syne font-bold text-orange-900 mb-2">Silk</h4>
+                <p className="text-orange-700 text-sm">Luxury and elegance</p>
+                <p className="font-bold text-orange-900 mt-2">$8/meter</p>
+              </div>
+            </div>
+            <p className="text-center text-orange-700 text-sm mt-4">
+              *Custom fabric requests and special fabrics like Kente available at additional charge
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* RUJEKO RWAKO Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="text-center mb-12">
+            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
+              RUJEKO RWAKO
+            </h2>
+            <p className="text-xl text-orange-800 max-w-3xl mx-auto">
+              A Glamorous Fashion Brand Rooted in Zimbabwean Tradition and Elegance
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-neutral-800 leading-relaxed mb-6">
+                RUJEKO RWAKO is a luxury fashion house celebrating the richness of Zimbabwean culture through timeless, elegant garments. Specializing in bespoke creations for weddings, cultural celebrations, and heritage-inspired fashion, RUJEKO RWAKO merges modern glamour with the beauty of tradition.
+              </p>
+              <p className="text-neutral-800 leading-relaxed mb-6">
+                Founded by Kiki Mapanzure and creatively styled by Darlington Chimwere – The Eye Stylist, the brand brings a refined vision to life with precision, cultural storytelling, and exceptional craftsmanship.
+              </p>
+              <p className="text-neutral-800 leading-relaxed">
+                RUJEKO RWAKO is the couture extension of RUJEKO Fabrics – every piece is made using these deeply symbolic textiles, designed to honor ancestry and tradition while dressing the modern African.
+              </p>
+            </div>
+            <div className="bg-orange-50 border border-orange-200 p-8 sharp-edges">
+              <h3 className="font-syne text-2xl font-bold text-orange-900 mb-6">Our Specialties</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-900 sharp-edges mt-2"></div>
+                  <div>
+                    <h4 className="font-syne font-bold text-orange-800">Bespoke Wedding Attire</h4>
+                    <p className="text-neutral-700 text-sm">Custom-made garments for your special day</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-900 sharp-edges mt-2"></div>
+                  <div>
+                    <h4 className="font-syne font-bold text-orange-800">Cultural Celebrations</h4>
+                    <p className="text-neutral-700 text-sm">Heritage wear for traditional ceremonies</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-900 sharp-edges mt-2"></div>
+                  <div>
+                    <h4 className="font-syne font-bold text-orange-800">African Formalwear</h4>
+                    <p className="text-neutral-700 text-sm">Elegant attire showcasing symbolic fabrics</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-900 sharp-edges mt-2"></div>
+                  <div>
+                    <h4 className="font-syne font-bold text-orange-800">Groom Wear</h4>
+                    <p className="text-neutral-700 text-sm">Sophisticated designs for the modern African groom</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -292,18 +365,18 @@ export default function Rujeko() {
       <section className="py-20 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <h2 className="font-syne text-4xl font-bold text-orange-900 mb-12 text-center">
-            Our Craft
+            More Than Fabric — A Movement
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
               <CardBody className="text-center p-8">
                 <h3 className="font-syne text-xl font-bold text-orange-900 mb-4">
-                  Authentic Patterns
+                  Reviving Traditions
                 </h3>
                 <p className="text-neutral-700 leading-relaxed">
                   Every design is rooted in genuine African traditions, carefully researched 
-                  and crafted with respect for cultural significance.
+                  and crafted with respect for cultural significance and ancestral wisdom.
                 </p>
               </CardBody>
             </Card>
@@ -311,11 +384,11 @@ export default function Rujeko() {
             <Card className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
               <CardBody className="text-center p-8">
                 <h3 className="font-syne text-xl font-bold text-orange-900 mb-4">
-                  Premium Materials
+                  Restoring Pride
                 </h3>
                 <p className="text-neutral-700 leading-relaxed">
-                  We use only the finest cotton and traditional techniques to ensure 
-                  our fabrics are both beautiful and durable.
+                  We create meaningful connections to heritage, helping people feel seen, 
+                  belong, and celebrate their cultural identity with confidence.
                 </p>
               </CardBody>
             </Card>
@@ -323,14 +396,23 @@ export default function Rujeko() {
             <Card className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
               <CardBody className="text-center p-8">
                 <h3 className="font-syne text-xl font-bold text-orange-900 mb-4">
-                  Cultural Connection
+                  Reconnecting Roots
                 </h3>
                 <p className="text-neutral-700 leading-relaxed">
-                  Each piece connects you to your heritage, creating meaningful bonds 
-                  between past traditions and contemporary expression.
+                  Each piece connects you to your lineage, creating bridges between 
+                  generations and passing on meaningful stories through textile art.
                 </p>
               </CardBody>
             </Card>
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-2xl text-orange-900 font-light italic">
+              "With RUJEKO, you wear more than fabric — you wear your story."
+            </p>
+            <p className="text-orange-700 mt-4">
+              Rooted in identity. Radiant by design. You are your story.
+            </p>
           </div>
         </div>
       </section>
@@ -367,7 +449,7 @@ export default function Rujeko() {
         </div>
       </section>
 
-      {/* Fabric Detail Modal */}
+      {/* Totem Detail Modal */}
       <Modal 
         isOpen={isOpen} 
         onOpenChange={onOpenChange}
@@ -385,8 +467,8 @@ export default function Rujeko() {
                 <h2 className="font-syne text-2xl font-bold text-orange-900">
                   {selectedFabric?.name}
                 </h2>
-                <p className="text-orange-700 font-normal">
-                  {selectedFabric?.badge} Collection
+                <p className="text-orange-700 font-normal italic">
+                  "{selectedFabric?.praise}"
                 </p>
               </ModalHeader>
               <ModalBody className="py-6">
@@ -397,67 +479,55 @@ export default function Rujeko() {
                         src={selectedFabric.image}
                         alt={selectedFabric.name}
                         fill
-                        className="object-cover sharp-edges"
+                        className="object-contain sharp-edges bg-white p-4"
                       />
                     </div>
                     <div className="space-y-6">
                       <div>
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="font-syne font-bold text-3xl text-orange-900">
-                            {selectedFabric.price}
-                          </span>
-                          <span className="text-orange-600 text-sm">
-                            (Min: {selectedFabric.minOrder})
-                          </span>
-                        </div>
-                        <p className="text-orange-800 leading-relaxed">
-                          {selectedFabric.longDescription}
+                        <h3 className="font-syne font-bold text-xl text-orange-900 mb-3">
+                          {selectedFabric.totem}
+                        </h3>
+                        <p className="text-orange-800 leading-relaxed mb-4">
+                          {selectedFabric.description}
+                        </p>
+                        <p className="text-orange-700 leading-relaxed text-sm">
+                          <strong>Symbolism:</strong> {selectedFabric.symbolism}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="font-syne font-bold text-orange-900 mb-2">Pattern</h4>
-                        <p className="text-orange-700">{selectedFabric.pattern}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-syne font-bold text-orange-900 mb-2">Available Colors</h4>
+                        <h4 className="font-syne font-bold text-orange-900 mb-2">Communities</h4>
                         <div className="flex flex-wrap gap-2">
-                          {selectedFabric.colors.map((color: string) => (
+                          {selectedFabric.communities.map((community: string) => (
                             <Chip 
-                              key={color} 
+                              key={community} 
                               size="sm" 
                               className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges"
                             >
-                              {color}
+                              {community}
                             </Chip>
                           ))}
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="font-syne font-bold text-orange-900 mb-2">Perfect For</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedFabric.occasions.map((occasion: string) => (
-                            <Chip 
-                              key={occasion} 
-                              size="sm" 
-                              className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges"
-                            >
-                              {occasion}
-                            </Chip>
+                        <h4 className="font-syne font-bold text-orange-900 mb-2">Sacred Qualities</h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {selectedFabric.qualities.map((quality: string) => (
+                            <div key={quality} className="flex items-center gap-2">
+                              <div className="w-2 h-2 bg-orange-900 sharp-edges"></div>
+                              <span className="text-neutral-700 text-sm">{quality}</span>
+                            </div>
                           ))}
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <h4 className="font-syne font-bold text-orange-900 mb-1">Materials</h4>
-                          <p className="text-orange-700">{selectedFabric.materials}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-syne font-bold text-orange-900 mb-1">Minimum Order</h4>
-                          <p className="text-orange-700">{selectedFabric.minOrder}</p>
+                      <div className="bg-orange-50 border border-orange-200 p-4 sharp-edges">
+                        <h4 className="font-syne font-bold text-orange-900 mb-2">Available Fabric Options</h4>
+                        <div className="space-y-2 text-sm">
+                          <p className="text-orange-700">• Poly Cotton - $10/meter</p>
+                          <p className="text-orange-700">• 100% Cotton - $15/meter</p>
+                          <p className="text-orange-700">• Silk - $8/meter</p>
                         </div>
                       </div>
                     </div>
@@ -476,12 +546,12 @@ export default function Rujeko() {
                   className="bg-orange-900 text-white font-syne tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
                   onPress={() => {
                     if (selectedFabric) {
-                      handleWhatsAppOrder(selectedFabric);
+                      handleWhatsAppInquiry(selectedFabric);
                     }
                     onClose();
                   }}
                 >
-                  Order on WhatsApp
+                  Inquire on WhatsApp
                 </Button>
               </ModalFooter>
             </>
