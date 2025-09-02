@@ -640,7 +640,7 @@ export default function Foundation() {
             </p>
             <Button
               onClick={() => {
-                const message = "Hi! I'm a young person interested in joining the MUNYARADZWE Foundation youth programs. Please tell me how I can get involved.";
+                const message = "Hi! I&apos;m a young person interested in joining the MUNYARADZWE Foundation youth programs. Please tell me how I can get involved.";
                 window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
               }}
               className="bg-white text-emerald-900 font-syne px-8 py-3 tracking-wide hover:bg-emerald-50 transition-all duration-200"

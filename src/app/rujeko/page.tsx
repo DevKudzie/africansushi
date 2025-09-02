@@ -1,11 +1,11 @@
 "use client";
 
-import { Button, Card, CardBody, Chip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
+import { Button, Card, CardBody, Chip } from "@heroui/react";
 import Link from "next/link";
 import NextImage from "next/image";
 import Layout from "@/components/Layout";
 import { toast } from "react-hot-toast";
-import { useState } from "react";
+
 
 const totemCollections = [
   {
@@ -78,8 +78,6 @@ interface TotemFabric {
 }
 
 export default function Rujeko() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [selectedFabric, setSelectedFabric] = useState<TotemFabric | null>(null);
 
 
 
@@ -446,115 +444,7 @@ export default function Rujeko() {
         </div>
       </section>
 
-      {/* Totem Detail Modal */}
-      <Modal 
-        isOpen={isOpen} 
-        onOpenChange={onOpenChange}
-        size="4xl"
-        classNames={{
-          base: "sharp-edges",
-          backdrop: "bg-orange-900/50",
-          wrapper: "items-center justify-center"
-        }}
-      >
-        <ModalContent className="sharp-edges bg-white">
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1 border-b border-orange-200 pb-4">
-                <h2 className="font-syne text-2xl font-bold text-orange-900">
-                  {selectedFabric?.name}
-                </h2>
-                <p className="text-orange-700 font-normal italic">
-                  &ldquo;{selectedFabric?.praise}&rdquo;
-                </p>
-              </ModalHeader>
-              <ModalBody className="py-6">
-                {selectedFabric && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="relative aspect-square">
-                      <NextImage
-                        src={selectedFabric.image}
-                        alt={selectedFabric.name}
-                        fill
-                        className="object-contain sharp-edges bg-white p-4"
-                      />
-                    </div>
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="font-syne font-bold text-xl text-orange-900 mb-3">
-                          {selectedFabric.totem}
-                        </h3>
-                        <p className="text-orange-800 leading-relaxed mb-4">
-                          {selectedFabric.description}
-                        </p>
-                        <p className="text-orange-700 leading-relaxed text-sm">
-                          <strong>Symbolism:</strong> {selectedFabric.symbolism}
-                        </p>
-                      </div>
 
-                      <div>
-                        <h4 className="font-syne font-bold text-orange-900 mb-2">Communities</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedFabric.communities.map((community: string) => (
-                            <Chip 
-                              key={community} 
-                              size="sm" 
-                              className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges"
-                            >
-                              {community}
-                            </Chip>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="font-syne font-bold text-orange-900 mb-2">Sacred Qualities</h4>
-                        <div className="grid grid-cols-2 gap-2">
-                          {selectedFabric.qualities.map((quality: string) => (
-                            <div key={quality} className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-orange-900 sharp-edges"></div>
-                              <span className="text-neutral-700 text-sm">{quality}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="bg-orange-50 border border-orange-200 p-4 sharp-edges">
-                        <h4 className="font-syne font-bold text-orange-900 mb-2">Available Fabric Options</h4>
-                        <div className="space-y-2 text-sm">
-                          <p className="text-orange-700">• Poly Cotton - $10/meter</p>
-                          <p className="text-orange-700">• 100% Cotton - $15/meter</p>
-                          <p className="text-orange-700">• Silk - $8/meter</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </ModalBody>
-              <ModalFooter className="border-t border-orange-200 pt-4">
-                <Button 
-                  variant="bordered" 
-                  onPress={onClose}
-                  className="border-orange-300 text-orange-800 hover:bg-orange-100 font-syne tracking-wide sharp-edges"
-                >
-                  Close
-                </Button>
-                <Button 
-                  className="bg-orange-900 text-white font-syne tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
-                  onPress={() => {
-                    if (selectedFabric) {
-                      handleWhatsAppInquiry(selectedFabric);
-                    }
-                    onClose();
-                  }}
-                >
-                  Inquire on WhatsApp
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </Layout>
   );
 } 
