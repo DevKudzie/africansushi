@@ -662,7 +662,7 @@ export default function Foundation() {
             </div>
             <div>
               <h3 className="font-syne text-3xl font-bold text-emerald-900 mb-6">
-                Creating Changemakers: What's Next
+                Creating Changemakers: What&apos;s Next
               </h3>
               <div className="space-y-4 text-emerald-800 leading-relaxed">
                 <p>
