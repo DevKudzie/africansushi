@@ -74,17 +74,7 @@ export default function Navigation() {
     return isScrolled ? "text-charcoal" : "text-white";
   };
 
-  const getBrandStyles = () => {
-    if (isRujekoPage || isFoundationPage || isContactPage) {
-      return isScrolled ? "bg-charcoal text-pearl" : "bg-charcoal text-pearl";
-    }
-    
-    if (!isHomePage) {
-      return isScrolled ? "bg-charcoal text-pearl" : "bg-white text-charcoal";
-    }
-    
-    return isScrolled ? "bg-charcoal text-pearl" : "bg-white text-charcoal";
-  };
+
 
   const getMenuToggleStyles = () => {
     if (isRujekoPage || isFoundationPage || isContactPage) {

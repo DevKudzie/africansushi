@@ -81,13 +81,10 @@ export default function Rujeko() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [selectedFabric, setSelectedFabric] = useState<TotemFabric | null>(null);
 
-  const openFabricDetail = (fabric: TotemFabric) => {
-    setSelectedFabric(fabric);
-    onOpen();
-  };
+
 
   const handleWhatsAppInquiry = (fabric: TotemFabric) => {
-    const message = `Hi! I'm interested in learning more about the ${fabric.name} fabric from the RUJEKO collection. Could you please share more details about this totem design, available options, and how to place an order?`;
+    const message = `Hi! I&apos;m interested in learning more about the ${fabric.name} fabric from the RUJEKO collection. Could you please share more details about this totem design, available options, and how to place an order?`;
     const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp...');
@@ -152,16 +149,16 @@ export default function Rujeko() {
             <div>
               <h3 className="font-syne text-3xl font-bold text-orange-900 mb-6">Fabric with a Story in Every Thread</h3>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                RUJEKO is more than a fabric line — it's a personal and cultural journey. Founded by Zimbabwean designer Kiki Mapanzure, the brand began as a way to preserve stories, heritage, and identity through textiles. For Kiki, fabric speaks where words fall short — becoming a way to honor ancestry and imagine a future filled with pride.
+                RUJEKO is more than a fabric line — it&apos;s a personal and cultural journey. Founded by Zimbabwean designer Kiki Mapanzure, the brand began as a way to preserve stories, heritage, and identity through textiles. For Kiki, fabric speaks where words fall short — becoming a way to honor ancestry and imagine a future filled with pride.
               </p>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                At the heart of this story are Zimbabwe's rich clan totems — powerful animal symbols like Shumba (lion), Nzou (elephant), Mhofu (eland), Hungwe (fish eagle), Soko (monkey), and Shiri (bird) — each representing lineage, character, and belonging. RUJEKO transforms these totems into living art, woven into every design. While these core totems anchor the collection, the brand will also accommodate other totem prints on request, ensuring every wearer sees their own story represented.
+                At the heart of this story are Zimbabwe&apos;s rich clan totems — powerful animal symbols like Shumba (lion), Nzou (elephant), Mhofu (eland), Hungwe (fish eagle), Soko (monkey), and Shiri (bird) — each representing lineage, character, and belonging. RUJEKO transforms these totems into living art, woven into every design. While these core totems anchor the collection, the brand will also accommodate other totem prints on request, ensuring every wearer sees their own story represented.
               </p>
               <p className="text-neutral-800 leading-relaxed mb-4">
-                Each RUJEKO textile is rich in symbolism, grounded in Zimbabwe's cultural traditions: Honeycomb patterns inspired by African geometry symbolize unity in diversity. Clan totems are woven into designs as ancestral emblems representing family identity and belonging. Zigzag motifs echo the chevron walls of Great Zimbabwe, symbolizing resilience and sacred foundations.
+                Each RUJEKO textile is rich in symbolism, grounded in Zimbabwe&apos;s cultural traditions: Honeycomb patterns inspired by African geometry symbolize unity in diversity. Clan totems are woven into designs as ancestral emblems representing family identity and belonging. Zigzag motifs echo the chevron walls of Great Zimbabwe, symbolizing resilience and sacred foundations.
               </p>
               <p className="text-neutral-800 leading-relaxed">
-                RUJEKO means "radiance" — and it's also the name of Kiki's late father, a man of honor, leadership, and cultural pride. His legacy is stitched into every design, guiding the brand's purpose.
+                RUJEKO means &ldquo;radiance&rdquo; — and it&apos;s also the name of Kiki&apos;s late father, a man of honor, leadership, and cultural pride. His legacy is stitched into every design, guiding the brand&apos;s purpose.
               </p>
             </div>
             <div className="relative">
@@ -223,7 +220,7 @@ export default function Rujeko() {
                         {fabric.name}
                       </h3>
                       <p className="text-orange-600 font-medium text-lg italic mb-1">
-                        "{fabric.praise}"
+                        &ldquo;{fabric.praise}&rdquo;
                       </p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {fabric.communities.map((community) => (
@@ -408,7 +405,7 @@ export default function Rujeko() {
           
           <div className="text-center mt-12">
             <p className="text-2xl text-orange-900 font-light italic">
-              "With RUJEKO, you wear more than fabric — you wear your story."
+              &ldquo;With RUJEKO, you wear more than fabric — you wear your story.&rdquo;
             </p>
             <p className="text-orange-700 mt-4">
               Rooted in identity. Radiant by design. You are your story.
@@ -468,7 +465,7 @@ export default function Rujeko() {
                   {selectedFabric?.name}
                 </h2>
                 <p className="text-orange-700 font-normal italic">
-                  "{selectedFabric?.praise}"
+                  &ldquo;{selectedFabric?.praise}&rdquo;
                 </p>
               </ModalHeader>
               <ModalBody className="py-6">

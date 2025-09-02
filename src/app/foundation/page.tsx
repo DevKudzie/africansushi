@@ -196,10 +196,10 @@ export default function Foundation() {
               </h2>
               <div className="space-y-4 text-green-800 leading-relaxed">
                 <p>
-                  Our mission is to bring comfort, hope, and support to those most in need, while inspiring a culture of kindness and volunteerism. This year, we're expanding our outreach by collaborating with educational institutions to engage youth in charitable initiatives, leadership, and community service—planting seeds for a more compassionate future.
+                  Our mission is to bring comfort, hope, and support to those most in need, while inspiring a culture of kindness and volunteerism. This year, we&apos;re expanding our outreach by collaborating with educational institutions to engage youth in charitable initiatives, leadership, and community service—planting seeds for a more compassionate future.
                 </p>
                 <p>
-                  The MUNYARADZWE Foundation is about more than aid—it's about fostering a world where everyone feels supported and valued. Your support helps us extend our reach and deepen our impact. Join us in creating a more compassionate and inclusive future.
+                  The MUNYARADZWE Foundation is about more than aid—it&apos;s about fostering a world where everyone feels supported and valued. Your support helps us extend our reach and deepen our impact. Join us in creating a more compassionate and inclusive future.
                 </p>
                 <p>
                   We are committed to addressing the immediate needs of the underprivileged, the homeless, and the abandoned, but we also seek long-term solutions by fostering a culture of kindness, giving, and volunteerism.
@@ -276,7 +276,7 @@ export default function Foundation() {
                   Social Engagement & Motivational Speaker
                 </p>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  An award-winning speaker and a distinguished member of the Maycdo Under 30 Fellowship (2020), Bruce is also listed in the 2025 Africa Emerging Brands. His powerful voice and leadership in youth engagement are key assets to the Foundation's outreach.
+                  An award-winning speaker and a distinguished member of the Maycdo Under 30 Fellowship (2020), Bruce is also listed in the 2025 Africa Emerging Brands. His powerful voice and leadership in youth engagement are key assets to the Foundation&apos;s outreach.
                 </p>
               </CardBody>
             </Card>
@@ -351,7 +351,7 @@ export default function Foundation() {
                   Welfare & Provision
                 </p>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  A highly qualified professional in Community Development, Linda holds a Master's in Human Rights, Peace and Development and a PhD in Social and Behavioural Sciences. Her extensive academic and practical knowledge enriches our efforts in human welfare and rights-based development.
+                  A highly qualified professional in Community Development, Linda holds a Master&apos;s in Human Rights, Peace and Development and a PhD in Social and Behavioural Sciences. Her extensive academic and practical knowledge enriches our efforts in human welfare and rights-based development.
                 </p>
               </CardBody>
             </Card>
@@ -593,16 +593,16 @@ export default function Foundation() {
             <div>
               <div className="space-y-4 text-emerald-800 leading-relaxed">
                 <p>
-                  That's why we're working with schools, colleges, and universities to help students step into purpose through kindness, leadership, and community service.
+                  That&apos;s why we&apos;re working with schools, colleges, and universities to help students step into purpose through kindness, leadership, and community service.
                 </p>
                 <p>
-                  Whether it's helping children in need, supporting the elderly, or leading awareness campaigns, we're giving young people the tools and support to make a real difference in their own communities.
+                  Whether it&apos;s helping children in need, supporting the elderly, or leading awareness campaigns, we&apos;re giving young people the tools and support to make a real difference in their own communities.
                 </p>
                 <p>
-                  We're not just teaching charity—we're building confidence, empathy, and courage.
+                  We&apos;re not just teaching charity—we&apos;re building confidence, empathy, and courage.
                 </p>
                 <p>
-                  This movement is inspired by the life of Garry Mapanzure, a young visionary who believed in spreading love and light. His legacy reminds us that one person really can spark change. Now, we're passing that torch to the next generation.
+                  This movement is inspired by the life of Garry Mapanzure, a young visionary who believed in spreading love and light. His legacy reminds us that one person really can spark change. Now, we&apos;re passing that torch to the next generation.
                 </p>
               </div>
             </div>
@@ -619,7 +619,7 @@ export default function Foundation() {
           {/* Call to Action for Youth */}
           <div className="bg-emerald-900 rounded-2xl p-12 text-center mb-16">
             <h3 className="font-syne text-3xl font-bold text-white mb-6">
-              If you're a student, teacher, or youth leader—this is your invitation to join us.
+              If you&apos;re a student, teacher, or youth leader—this is your invitation to join us.
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div className="text-emerald-100">
@@ -696,10 +696,10 @@ export default function Foundation() {
             </h3>
             <div className="max-w-4xl mx-auto space-y-4 text-emerald-800 leading-relaxed">
               <p>
-                When we empower the youth, we don't just give them opportunities—we give them purpose. We show them that they matter. That their voices count. That they have the power to be a light in someone else's darkness.
+                                  When we empower the youth, we don&apos;t just give them opportunities—we give them purpose. We show them that they matter. That their voices count. That they have the power to be a light in someone else&apos;s darkness.
               </p>
               <p>
-                The MUNYARADZWE Foundation calls upon educators, parents, mentors, and communities to join us in this mission. Let's raise a generation that is bold enough to care, wise enough to lead, and kind enough to serve.
+                The MUNYARADZWE Foundation calls upon educators, parents, mentors, and communities to join us in this mission. Let&apos;s raise a generation that is bold enough to care, wise enough to lead, and kind enough to serve.
               </p>
             </div>
           </div>

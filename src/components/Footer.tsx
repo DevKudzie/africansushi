@@ -2,14 +2,9 @@
 
 import React from "react";
 import NextImage from "next/image";
-import { usePathname } from "next/navigation";
 import { Phone, Mail, MapPin, Heart } from "lucide-react";
 
 export default function Footer() {
-  const pathname = usePathname();
-  const isFoundationPage = pathname === "/foundation";
-  const isRujekoPage = pathname === "/rujeko";
-
   // Use African Pride logo consistently across all pages
   const logoInfo = {
     src: "/images/Africans-pride-logo-horizontal.png",
