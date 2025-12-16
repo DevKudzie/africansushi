@@ -110,21 +110,21 @@ const heroSlides = [
     title: "AFRICAN",
     subtitle: "SUSHI WEAR",
     description: "Premium streetwear. Taste the Vision. Live the Legacy.",
-    image: "/images/Model Pics/cut/AS Wear 1.JPG",
+    image: "/images/Model Pics/cut/AS Wear 1.jpg",
     cta: "Shop Collection"
   },
   {
     title: "PREMIUM",
     subtitle: "STREETWEAR",
     description: "Crafted for comfort, culture, and expression.",
-    image: "/images/Model Pics/cut/AS Wear 2.JPG",
+    image: "/images/Model Pics/cut/AS Wear 2.jpg",
     cta: "Shop Collection"
   },
   {
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Heritage and style, designed for today.",
-    image: "/images/Model Pics/cut/AS Wear 3.JPG",
+    image: "/images/Model Pics/cut/AS Wear 3.jpg",
     cta: "Shop Collection"
   }
 ];

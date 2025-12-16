@@ -12,21 +12,21 @@ const heroSlides = [
     title: "AFRICAN",
     subtitle: "PRIDE",
     description: "Taste the Vision. Live the Legacy.",
-    image: "/images/Model Pics/cut/AS Wear 1.JPG",
+    image: "/images/Model Pics/cut/AS Wear 1.jpg",
     cta: "Discover Collection"
   },
   {
     title: "PREMIUM",
     subtitle: "HERITAGE",
     description: "Authentic African craftsmanship meets modern luxury.",
-    image: "/images/Model Pics/cut/AS Wear 2.JPG",
+    image: "/images/Model Pics/cut/AS Wear 2.jpg",
     cta: "Explore Fabrics"
   },
   {
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Honoring Garry Mapanzure through meaningful impact.",
-    image: "/images/Model Pics/cut/AS Wear 3.JPG",
+    image: "/images/Model Pics/cut/AS Wear 3.jpg",
     cta: "Support Foundation"
   }
 ];
