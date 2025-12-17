@@ -191,7 +191,7 @@ export default function Rujeko() {
               Totem Heritage Collections
             </h2>
             <p className="text-xl text-orange-800 max-w-3xl mx-auto">
-              Each design honors the sacred animal totems that define Zimbabwean identity, lineage, and cultural pride.
+              Each design honors the sacred animal totems that define Zimbabwean identity, lineage, and cultural pride. We can accommodate any other totem as per request.
             </p>
           </div>
 
@@ -352,6 +352,175 @@ export default function Rujeko() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Process Section */}
+      <section className="py-20 bg-orange-50">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="text-center mb-12">
+            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
+              Booking Process
+            </h2>
+            <p className="text-xl text-orange-800 max-w-3xl mx-auto">
+              Your journey to a bespoke garment begins here. Follow these steps to bring your vision to life.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {/* Step 1 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    1
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      What&apos;s App, DM, Email Us
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed">
+                      Provide information about the event including full name, date, location, theme colors and outfit requirements.
+                    </p>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Step 2 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    2
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      Schedule Consultation
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed mb-2">
+                      Book a consultation date with us to discuss your vision, budget and we can create concepts for the outfit. We will finalize the design and other details to start the process.
+                    </p>
+                    <Chip size="sm" className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges">
+                      Booking Fee Required
+                    </Chip>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Step 3 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    3
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      Schedule For Measurements
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed">
+                      Measurements are done and we will provide a moodboard and fabric selection.
+                    </p>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Step 4 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    4
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      Terms and Contract
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed">
+                      After we agreed on the details and confirm the booking with us a contract will be provided outlining the terms, including payment, deadlines and responsibilities.
+                    </p>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Step 5 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    5
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      Pre-fitting Day
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed">
+                      Schedule for first fitting to ensure a perfect fit and some alterations.
+                    </p>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Step 6 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    6
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      Final Fitting/Completion
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed">
+                      The final fitting will be done to ensure the fit and delivery of the bespoke garment.
+                    </p>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Step 7 */}
+            <Card className="bg-white border-l-4 border-orange-900 sharp-edges">
+              <CardBody className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-900 text-white font-syne font-bold text-xl flex items-center justify-center sharp-edges">
+                    7
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-syne text-xl font-bold text-orange-900 mb-2">
+                      Optional Event Day Styling Support
+                    </h3>
+                    <p className="text-neutral-800 leading-relaxed mb-2">
+                      The brand will provide a Stylist to provide styling advice curating the whole look and expert assist during the event day.
+                    </p>
+                    <Chip size="sm" className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges">
+                      Additional Styling Fee
+                    </Chip>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          </div>
+
+          {/* CTA Button */}
+          <div className="mt-12 text-center">
+            <Button
+              className="bg-orange-900 text-white font-syne px-8 py-4 text-lg tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
+              onClick={() => {
+                const message = "Hi! I'm interested in booking a consultation for RUJEKO RWAKO. I'd like to discuss my event requirements and get started with the booking process.";
+                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                toast.success('Redirecting to WhatsApp...');
+              }}
+            >
+              Start Your Booking
+            </Button>
           </div>
         </div>
       </section>

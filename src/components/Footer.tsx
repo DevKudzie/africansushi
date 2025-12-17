@@ -22,9 +22,9 @@ export default function Footer() {
               <NextImage
                 src={logoInfo.src}
                 alt={logoInfo.alt}
-                width={200}
-                height={60}
-                className="h-16 w-auto object-contain"
+                width={280}
+                height={84}
+                className="h-24 w-auto object-contain"
               />
             </div>
             <p className="font-manrope text-stone mb-8 max-w-md leading-relaxed">

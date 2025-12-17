@@ -112,7 +112,7 @@ export default function Navigation() {
               </div>
             ) : (
               <>
-                <div className="h-12 flex items-center">
+                <div className="h-16 flex items-center">
                   <NextImage
                     src={`/images/${
                       isFoundationPage ? "MUNYARADZWE-LOGO.png" :
@@ -122,9 +122,9 @@ export default function Navigation() {
                       isScrolled ? "Africans-pride-logo-horizontal.png" : "Africans-pride-logo-white-text.png"
                     }`}
                     alt={isFoundationPage ? "Munyaradzwe Foundation" : isRujekoPage ? "Rujeko" : "African Pride"}
-                    width={180}
-                    height={48}
-                    className="h-12 w-auto object-contain transition-all duration-300"
+                    width={240}
+                    height={64}
+                    className="h-16 w-auto object-contain transition-all duration-300"
                   />
                 </div>
               </>
