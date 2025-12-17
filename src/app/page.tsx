@@ -13,21 +13,24 @@ const heroSlides = [
     subtitle: "PRIDE",
     description: "Taste the Vision. Live the Legacy.",
     image: "/images/Model Pics/cut/AS Wear 1.jpg",
-    cta: "Discover Collection"
+    cta: "Discover Collection",
+    href: "/african-sushi-wear"
   },
   {
     title: "PREMIUM",
     subtitle: "HERITAGE",
     description: "Authentic African craftsmanship meets modern luxury.",
     image: "/images/Model Pics/cut/AS Wear 2.jpg",
-    cta: "Explore Fabrics"
+    cta: "Explore Fabrics",
+    href: "/rujeko"
   },
   {
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Honoring Garry Mapanzure through meaningful impact.",
     image: "/images/Model Pics/cut/AS Wear 3.jpg",
-    cta: "Support Foundation"
+    cta: "Support Foundation",
+    href: "/foundation"
   }
 ];
 
@@ -89,6 +92,8 @@ export default function Home() {
                     {slide.description}
                   </p>
                   <Button
+                    as={Link}
+                    href={slide.href}
                     size="lg"
                     className="bg-pearl text-charcoal font-manrope font-semibold px-8 py-6 text-lg hover:bg-charcoal hover:text-pearl transition-all duration-300 sharp-edges"
                   >
@@ -139,7 +144,7 @@ export default function Home() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
-                <h2 className="font-syne text-5xl lg:text-6xl font-bold text-charcoal mb-6 leading-none">
+                <h2 className="font-syne text-5xl lg:text-6xl font-bold text-charcoal mb-6 leading-none underline">
                   Our <em className="font-manrope">Legacy</em>
                 </h2>
               </div>

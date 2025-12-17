@@ -47,7 +47,7 @@ const tshirtCategories: TshirtCategory[] = [
     ],
   },
   {
-    name: "CONSOLIDATION",
+    name: "CONSOLATION",
     items: [
       { src: "/images/A S T-Shirts/extracted/JPEGS/4. Consolation Hamba Kahle black.jpg", title: "Hamba Kahle (Black)" },
       { src: "/images/A S T-Shirts/extracted/JPEGS/4. Consolation Hamba Kahle darker blue.jpg", title: "Hamba Kahle (Dark Blue)" },
@@ -212,6 +212,12 @@ export default function AfricanSushiWear() {
     setLightboxOpen(true);
   };
 
+  const openHoodieLightbox = (product: typeof hoodieProducts[0]) => {
+    setCurrentProductImages(product.images.map(src => ({ src, alt: product.name })));
+    setLightboxIndex(0);
+    setLightboxOpen(true);
+  };
+
   // Auto-advance hero slider
   useEffect(() => {
     const timer = setInterval(() => {
@@ -227,57 +233,95 @@ export default function AfricanSushiWear() {
   // Remove getHoodiePrice function as prices are now hardcoded in products
 
   const hoodieProducts = [
+    // Novus Hoodies - Face on Hoodie ($85)
     {
       id: 1,
-      name: "Heritage Hoodie - Black on White",
-      price: "$85", // Cap/front graphic price as per notes
+      name: "Novus Hoodie - Black on White (Face on Hoodie)",
+      price: "$85",
       images: [
-        "/images/A S Hoodies/B on W front .jpg",
-        "/images/A S Hoodies/B on W back .jpg",
-        "/images/A S Hoodies/B on W side .jpg"
+        "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie Black on White.jpg"
       ],
-      description: "Premium cotton blend hoodie featuring black African patterns on white fabric.",
+      description: "Premium Novus hoodie with face design on the hood. Black patterns on white fabric.",
       sizes: ["S", "M", "L", "XL", "XXL"],
-      category: "BW"
+      category: "NOVUS_HOODIE_85"
     },
     {
       id: 2,
-      name: "Heritage Hoodie - White on Black",
-      price: "$90", // Large back graphic price as per notes
+      name: "Novus Hoodie - Teal on Black (Face on Hoodie)",
+      price: "$85",
       images: [
-        "/images/A S Hoodies/W on B front .jpg",
-        "/images/A S Hoodies/W on B Back .jpg",
-        "/images/A S Hoodies/W on B side .jpg"
+        "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie Teal on Black.jpg"
       ],
-      description: "Premium cotton blend hoodie featuring white African patterns on black fabric.",
+      description: "Premium Novus hoodie with face design on the hood. Teal patterns on black fabric.",
       sizes: ["S", "M", "L", "XL", "XXL"],
-      category: "WB"
+      category: "NOVUS_HOODIE_85"
     },
     {
       id: 3,
-      name: "Heritage Hoodie - Green on Black",
-      price: "$85", // Cap/front graphic price as per notes
+      name: "Novus Hoodie - Teal on White (Face on Hoodie)",
+      price: "$85",
       images: [
-        "/images/A S Hoodies/G on B front .jpg",
-        "/images/A S Hoodies/G on B back .jpg",
-        "/images/A S Hoodies/G on B side .jpg"
+        "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie Teal on White.jpg"
       ],
-      description: "Premium cotton blend hoodie featuring green African patterns on black fabric.",
+      description: "Premium Novus hoodie with face design on the hood. Teal patterns on white fabric.",
       sizes: ["S", "M", "L", "XL", "XXL"],
-      category: "BG"
+      category: "NOVUS_HOODIE_85"
     },
     {
       id: 4,
-      name: "Heritage Hoodie - Green on White",
-      price: "$85", // Cap/front graphic price as per notes
+      name: "Novus Hoodie - White on Black (Face on Hoodie)",
+      price: "$85",
       images: [
-        "/images/A S Hoodies/G on W front .jpg",
-        "/images/A S Hoodies/G on W back .jpg",
-        "/images/A S Hoodies/G on W side .jpg"
+        "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie White on Black.jpg"
       ],
-      description: "Premium cotton blend hoodie featuring green African patterns on white fabric.",
+      description: "Premium Novus hoodie with face design on the hood. White patterns on black fabric.",
       sizes: ["S", "M", "L", "XL", "XXL"],
-      category: "WG"
+      category: "NOVUS_HOODIE_85"
+    },
+    // Novus Hoodies - Face on Back ($95)
+    {
+      id: 5,
+      name: "Novus Hoodie - Black on White (Face on Back)",
+      price: "$95",
+      images: [
+        "/images/hoodies/novus-face-on-back-95/Novus Hoodie Black on White.jpg"
+      ],
+      description: "Premium Novus hoodie with face design on the back. Black patterns on white fabric.",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      category: "NOVUS_BACK_95"
+    },
+    {
+      id: 6,
+      name: "Novus Hoodie - Teal on Black (Face on Back)",
+      price: "$95",
+      images: [
+        "/images/hoodies/novus-face-on-back-95/Novus Hoodie Teal on Black.jpg"
+      ],
+      description: "Premium Novus hoodie with face design on the back. Teal patterns on black fabric.",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      category: "NOVUS_BACK_95"
+    },
+    {
+      id: 7,
+      name: "Novus Hoodie - Teal on White (Face on Back)",
+      price: "$95",
+      images: [
+        "/images/hoodies/novus-face-on-back-95/Novus Hoodie Teal on White.jpg"
+      ],
+      description: "Premium Novus hoodie with face design on the back. Teal patterns on white fabric.",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      category: "NOVUS_BACK_95"
+    },
+    {
+      id: 8,
+      name: "Novus Hoodie - White on Black (Face on Back)",
+      price: "$95",
+      images: [
+        "/images/hoodies/novus-face-on-back-95/Novus Hoodie White on Black.jpg"
+      ],
+      description: "Premium Novus hoodie with face design on the back. White patterns on black fabric.",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      category: "NOVUS_BACK_95"
     }
   ];
 
@@ -369,7 +413,7 @@ export default function AfricanSushiWear() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           {/* Removed duplicate model slider per request */}
           <div className="text-center mb-16">
-            <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-6">
+            <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-6 underline">
               Current Collection
             </h2>
             <p className="text-xl text-zinc-700 max-w-3xl mx-auto">
@@ -382,8 +426,8 @@ export default function AfricanSushiWear() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {hoodieProducts.map((product) => (
                 <Card key={product.id} className="bg-white border border-zinc-200 hover:border-zinc-400 transition-all duration-300 group sharp-edges">
-                  <div className="relative aspect-[4/5] overflow-hidden">
-                    <NextImage src={product.images[0]} alt={product.name} fill className="object-contain bg-white" />
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <NextImage src={product.images[0]} alt={product.name} fill className="object-cover bg-white" />
                   </div>
                   <CardBody className="p-6">
                     <h4 className="font-syne text-xl font-bold text-zinc-900 mb-2 leading-tight">{product.name}</h4>
@@ -392,17 +436,26 @@ export default function AfricanSushiWear() {
                       <span className="font-syne font-bold text-2xl text-zinc-900">{product.price}</span>
                       <span className="text-sm text-zinc-500">Sizes: {product.sizes.join(", ")}</span>
                     </div>
-                    <Button
-                      variant="bordered"
-                      className="border-zinc-300 text-zinc-700 sharp-edges w-full"
-                      onClick={() => {
-                        const message = `Hi! I'm interested in the ${product.name} (${product.price}). Sizes: S M L XL XXL. Delivery: Harare CBD $3; other locations based on distance.`;
-                        window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
-                        toast.success('Redirecting to WhatsApp...');
-                      }}
-                    >
-                      Order Now
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button
+                        isIconOnly
+                        className="bg-zinc-900 text-white sharp-edges"
+                        onClick={() => openHoodieLightbox(product)}
+                      >
+                        <Eye className="w-4 h-4" />
+                      </Button>
+                      <Button
+                        variant="bordered"
+                        className="border-zinc-300 text-zinc-700 sharp-edges flex-1"
+                        onClick={() => {
+                          const message = `Hi! I'm interested in the ${product.name} (${product.price}). Sizes: S M L XL XXL. Delivery: Harare CBD $3; other locations based on distance.`;
+                          window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                          toast.success('Redirecting to WhatsApp...');
+                        }}
+                      >
+                        Order Now
+                      </Button>
+                    </div>
                   </CardBody>
                 </Card>
               ))}
@@ -437,7 +490,7 @@ export default function AfricanSushiWear() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
 
-          <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-10 text-center">T‑Shirt Collections</h2>
+          <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-10 text-center underline">T‑Shirt Collections</h2>
           <p className="text-center text-zinc-600 mb-12">Prices in USD. “Kuhadhira” and “zvichanaka chete” are $40; all other tees are $35.</p>
           {/* Filters moved here */}
           <div className="mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
@@ -459,7 +512,7 @@ export default function AfricanSushiWear() {
             <Select selectedKeys={[selectedCategory]} onChange={(e) => setSelectedCategory(e.target.value)} className="sharp-edges">
               <SelectItem key="All">All T‑Shirt Categories</SelectItem>
               <SelectItem key="LOVE">LOVE</SelectItem>
-              <SelectItem key="CONSOLIDATION">CONSOLIDATION</SelectItem>
+              <SelectItem key="CONSOLATION">CONSOLATION</SelectItem>
               <SelectItem key="HOPE">HOPE</SelectItem>
               <SelectItem key="FAITH">FAITH</SelectItem>
               <SelectItem key="VIBES ON VIBES">VIBES ON VIBES</SelectItem>
@@ -651,7 +704,7 @@ export default function AfricanSushiWear() {
       <section className="py-20 bg-gradient-to-br from-stone-50 to-slate-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-6">
+            <h2 className="font-syne text-4xl font-bold text-zinc-900 mb-6 underline">
               The Creative Team
             </h2>
             <p className="text-xl text-zinc-700 max-w-3xl mx-auto">
@@ -672,7 +725,16 @@ export default function AfricanSushiWear() {
                   <div className="bg-white border-2 border-zinc-900 sharp-edges p-8 text-center">
                     <div className="w-24 h-24 bg-zinc-900 sharp-edges flex items-center justify-center mx-auto mb-6">
                       <span className="text-white font-syne font-bold text-2xl">
-                        {designer.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                        {(() => {
+                          const nameParts = designer.name.trim().split(/\s+/).filter(part => !part.match(/^(Mrs?|Mr|Ms|Dr|Prof)\.?$/i));
+                          if (nameParts.length >= 2) {
+                            // First letter of first name and first letter of last name
+                            return (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase();
+                          } else if (nameParts.length === 1) {
+                            return nameParts[0][0].toUpperCase();
+                          }
+                          return designer.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+                        })()}
                       </span>
                     </div>
 

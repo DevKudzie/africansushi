@@ -187,7 +187,7 @@ export default function Rujeko() {
       <section className="py-20 bg-orange-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
+            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6 underline">
               Totem Heritage Collections
             </h2>
             <p className="text-xl text-orange-800 max-w-3xl mx-auto">
@@ -299,7 +299,7 @@ export default function Rujeko() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-12">
-            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
+            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6 underline">
               RUJEKO RWAKO
             </h2>
             <p className="text-xl text-orange-800 max-w-3xl mx-auto">
@@ -360,7 +360,7 @@ export default function Rujeko() {
       <section className="py-20 bg-orange-50">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-12">
-            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6">
+            <h2 className="font-syne text-4xl font-bold text-orange-900 mb-6 underline">
               Booking Process
             </h2>
             <p className="text-xl text-orange-800 max-w-3xl mx-auto">
