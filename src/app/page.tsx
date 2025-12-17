@@ -216,13 +216,34 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Middle Section - Quote and Foundation */}
+          {/* Middle Section - Kiki Delicacy and Foundation */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div className="premium-card sharp-edges p-8 bg-charcoal text-pearl h-80 flex flex-col justify-center">
-              <blockquote className="font-syne text-2xl lg:text-3xl font-light mb-6 leading-relaxed italic">
-                &ldquo;True success is measured not just by what we achieve, but by how many lives we touch along the way.&rdquo;
-              </blockquote>
-              <cite className="font-manrope text-sm text-pearl/70">— African Pride Philosophy</cite>
+            {/* Kiki Delicacy */}
+            <div className="premium-card sharp-edges p-8 h-80 relative overflow-hidden group">
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/Kiki Delicacy/Kiki delicacy 7.jpg"
+                  alt="Kiki Delicacy"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-charcoal/60 transition-colors duration-300" />
+              </div>
+              <div className="relative z-10 h-full flex flex-col justify-end">
+                <h3 className="font-syne text-3xl font-bold text-pearl mb-3">
+                  Kiki Delicacy
+                </h3>
+                <p className="font-manrope text-pearl/90 mb-6 leading-relaxed">
+                  Catering with a <em>personal touch</em>. Delicious meals crafted with care and attention to detail.
+                </p>
+                <Button
+                  as={Link}
+                  href="/contact"
+                  className="bg-pearl text-charcoal font-semibold px-6 py-3 hover:bg-charcoal hover:text-pearl transition-all sharp-edges w-fit"
+                >
+                  Contact Us
+                </Button>
+              </div>
             </div>
             
             <div className="premium-card sharp-edges p-8 bg-mist h-80 flex flex-col">
@@ -261,17 +282,11 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="premium-card sharp-edges h-64 relative overflow-hidden group">
-              <Image
-                src="/images/Kiki Delicacy/Kiki delicacy 7.jpg"
-                alt="Kiki Delicacy"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-charcoal/30 group-hover:bg-charcoal/50 transition-colors duration-300" />
-              <div className="absolute bottom-6 left-6 text-pearl">
-                <h4 className="font-syne text-xl font-bold">Kiki Delicacy – Catering with a Personal Touch</h4>
-              </div>
+            <div className="premium-card sharp-edges p-8 bg-charcoal text-pearl h-64 flex flex-col justify-center">
+              <blockquote className="font-syne text-base lg:text-lg font-light mb-4 leading-relaxed italic">
+                &ldquo;True success is measured not just by what we achieve, but by how many lives we touch along the way.&rdquo;
+              </blockquote>
+              <cite className="font-manrope text-xs text-pearl/70">— African Pride Philosophy</cite>
             </div>
             
             
@@ -314,12 +329,12 @@ export default function Home() {
               </Button>
               <Button
                 as={Link}
-                href="/events"
+                href="/contact"
                 variant="bordered"
                 size="lg"
                 className="w-full border-pearl text-pearl hover:bg-pearl hover:text-charcoal font-manrope px-8 py-6 text-lg sharp-edges"
               >
-                View Events
+                Get In Touch
               </Button>
             </div>
           </div>

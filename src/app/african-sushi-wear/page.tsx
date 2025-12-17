@@ -107,13 +107,6 @@ const getTshirtPrice = (title: string): string => {
 
 const heroSlides = [
   {
-    title: "AFRICAN",
-    subtitle: "SUSHI WEAR",
-    description: "Premium streetwear. Taste the Vision. Live the Legacy.",
-    image: "/images/Model Pics/cut/AS Wear 1.jpg",
-    cta: "Shop Collection"
-  },
-  {
     title: "PREMIUM",
     subtitle: "STREETWEAR",
     description: "Crafted for comfort, culture, and expression.",
@@ -125,6 +118,13 @@ const heroSlides = [
     subtitle: "CONTINUES",
     description: "Heritage and style, designed for today.",
     image: "/images/Model Pics/cut/AS Wear 3.jpg",
+    cta: "Shop Collection"
+  },
+  {
+    title: "AFRICAN",
+    subtitle: "SUSHI WEAR",
+    description: "Premium streetwear. Taste the Vision. Live the Legacy.",
+    image: "/images/Model Pics/cut/AS Wear 1.jpg",
     cta: "Shop Collection"
   }
 ];
