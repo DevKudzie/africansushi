@@ -222,7 +222,7 @@ export default function Home() {
             <div className="premium-card sharp-edges p-8 h-80 relative overflow-hidden group">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/Kiki Delicacy/Kiki delicacy 7.jpg"
+                  src="/images/Kiki Delicacy/Copy of IMG_6633.JPG"
                   alt="Kiki Delicacy"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
