@@ -83,7 +83,7 @@ export default function Rujeko() {
 
   const handleWhatsAppInquiry = (fabric: TotemFabric) => {
     const message = `Hi! I&apos;m interested in learning more about the ${fabric.name} fabric from the RUJEKO collection. Could you please share more details about this totem design, available options, and how to place an order?`;
-    const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/263784528586?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp...');
   };
@@ -100,20 +100,20 @@ export default function Rujeko() {
               <p className="text-base text-neutral-700 mb-2">By Kiki Mapanzure</p>
               <p className="text-2xl text-neutral-800 mb-6 font-light">Radiance Woven in Heritage</p>
               <p className="text-lg text-neutral-700 mb-8 leading-relaxed">
-                Authentic African fabrics that celebrate clan totems, cultural identity, 
+                Authentic African fabrics that celebrate clan totems, cultural identity,
                 and the beauty of Zimbabwean traditions. Each thread tells a story of belonging.
               </p>
               <Button
                 className="bg-orange-900 text-white font-syne px-8 py-4 text-lg tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
                 onClick={() => {
                   const message = "Hi! I&apos;m interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
-                  window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                  window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                 }}
               >
                 Explore Collections
               </Button>
             </div>
-            
+
             {/* Right side - Image */}
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px] overflow-hidden sharp-edges border border-orange-200">
@@ -222,9 +222,9 @@ export default function Rujeko() {
                       </p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {fabric.communities.map((community) => (
-                          <Chip 
-                            key={community} 
-                            size="sm" 
+                          <Chip
+                            key={community}
+                            size="sm"
                             className="bg-orange-100 text-orange-800 border border-orange-300 sharp-edges"
                           >
                             {community}
@@ -515,7 +515,7 @@ export default function Rujeko() {
               className="bg-orange-900 text-white font-syne px-8 py-4 text-lg tracking-wide hover:bg-orange-800 transition-all duration-200 sharp-edges"
               onClick={() => {
                 const message = "Hi! I'm interested in booking a consultation for RUJEKO RWAKO. I'd like to discuss my event requirements and get started with the booking process.";
-                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                 toast.success('Redirecting to WhatsApp...');
               }}
             >
@@ -531,7 +531,7 @@ export default function Rujeko() {
           <h2 className="font-syne text-4xl font-bold text-orange-900 mb-12 text-center">
             More Than Fabric — A Movement
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
               <CardBody className="text-center p-8">
@@ -539,37 +539,37 @@ export default function Rujeko() {
                   Reviving Traditions
                 </h3>
                 <p className="text-neutral-700 leading-relaxed">
-                  Every design is rooted in genuine African traditions, carefully researched 
+                  Every design is rooted in genuine African traditions, carefully researched
                   and crafted with respect for cultural significance and ancestral wisdom.
                 </p>
               </CardBody>
             </Card>
-            
+
             <Card className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
               <CardBody className="text-center p-8">
                 <h3 className="font-syne text-xl font-bold text-orange-900 mb-4">
                   Restoring Pride
                 </h3>
                 <p className="text-neutral-700 leading-relaxed">
-                  We create meaningful connections to heritage, helping people feel seen, 
+                  We create meaningful connections to heritage, helping people feel seen,
                   belong, and celebrate their cultural identity with confidence.
                 </p>
               </CardBody>
             </Card>
-            
+
             <Card className="bg-white border border-orange-200 hover:border-orange-400 transition-all duration-300 group sharp-edges">
               <CardBody className="text-center p-8">
                 <h3 className="font-syne text-xl font-bold text-orange-900 mb-4">
                   Reconnecting Roots
                 </h3>
                 <p className="text-neutral-700 leading-relaxed">
-                  Each piece connects you to your lineage, creating bridges between 
+                  Each piece connects you to your lineage, creating bridges between
                   generations and passing on meaningful stories through textile art.
                 </p>
               </CardBody>
             </Card>
           </div>
-          
+
           <div className="text-center mt-12">
             <p className="text-2xl text-orange-900 font-light italic">
               &ldquo;With RUJEKO, you wear more than fabric — you wear your story.&rdquo;
@@ -590,13 +590,13 @@ export default function Rujeko() {
           <p className="text-xl text-orange-200 mb-8 leading-relaxed">
             Connect with your heritage through authentic African fabrics that speak your identity.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-white text-orange-900 font-syne px-8 py-3 tracking-wide hover:bg-orange-50 transition-all duration-200 sharp-edges"
               onClick={() => {
                 const message = "Hi! I&apos;m interested in learning more about Rujeko fabric collections. Please share your catalog and pricing.";
-                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
               }}
             >
               Explore Fabrics

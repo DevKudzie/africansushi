@@ -35,17 +35,17 @@ const CountUpNumber = ({ target, suffix = "", duration = 2000 }: { target: numbe
     const animate = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      
+
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       const currentCount = Math.floor(easeOutQuart * target);
-      
+
       setCount(currentCount);
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate);
       }
     };
-    
+
     requestAnimationFrame(animate);
   }, [isVisible, target, duration]);
 
@@ -142,14 +142,14 @@ const programs = [
 
 const handleDonation = () => {
   const message = "Hi! I&apos;d like to make a donation to the Munyaradzwe Foundation. Please provide me with donation options and methods.";
-  const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/263784528586?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
   toast.success('Redirecting to WhatsApp for donation information...');
 };
 
 const handleVolunteer = () => {
   const message = "Hi! I&apos;m interested in volunteering with the Munyaradzwe Foundation. Please tell me about volunteer opportunities.";
-  const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/263784528586?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
   toast.success('Redirecting to WhatsApp for volunteer information...');
 };
@@ -467,15 +467,15 @@ export default function Foundation() {
                       {program.category}
                     </Chip>
                   </div>
-                  
+
                   <h3 className="font-syne text-xl font-bold text-emerald-900 mb-2 leading-tight">
                     {program.title}
                   </h3>
-                  
+
                   <p className="text-emerald-700 text-sm mb-4 leading-relaxed">
                     {program.description}
                   </p>
-                  
+
                   <div className="mb-4">
                     <span className="font-syne font-bold text-emerald-900 text-sm">
                       Impact: {program.impact}
@@ -483,17 +483,17 @@ export default function Foundation() {
                   </div>
 
                   <div className="space-y-2">
-                  <Button
+                    <Button
                       className="w-full bg-emerald-900 text-white font-syne px-4 py-2 text-sm tracking-wide hover:bg-emerald-800 transition-all duration-200"
                       style={{ boxShadow: 'none' }}
                       onClick={() => {
-                      const message = `Hi! I&apos;d like to learn more about the ${program.title} program and how I can get involved.`;
-                      window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                        const message = `Hi! I&apos;d like to learn more about the ${program.title} program and how I can get involved.`;
+                        window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                       }}
                     >
                       Learn More
                     </Button>
-                  <Button
+                    <Button
                       variant="bordered"
                       className="w-full border-emerald-300 text-emerald-800 hover:bg-emerald-100 font-syne px-4 py-2 text-sm tracking-wide transition-all duration-200"
                       style={{ boxShadow: 'none' }}
@@ -641,7 +641,7 @@ export default function Foundation() {
             <Button
               onClick={() => {
                 const message = "Hi! I&apos;m a young person interested in joining the MUNYARADZWE Foundation youth programs. Please tell me how I can get involved.";
-                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
               }}
               className="bg-white text-emerald-900 font-syne px-8 py-3 tracking-wide hover:bg-emerald-50 transition-all duration-200"
               style={{ boxShadow: 'none' }}
@@ -696,7 +696,7 @@ export default function Foundation() {
             </h3>
             <div className="max-w-4xl mx-auto space-y-4 text-emerald-800 leading-relaxed">
               <p>
-                                  When we empower the youth, we don&apos;t just give them opportunities—we give them purpose. We show them that they matter. That their voices count. That they have the power to be a light in someone else&apos;s darkness.
+                When we empower the youth, we don&apos;t just give them opportunities—we give them purpose. We show them that they matter. That their voices count. That they have the power to be a light in someone else&apos;s darkness.
               </p>
               <p>
                 The MUNYARADZWE Foundation calls upon educators, parents, mentors, and communities to join us in this mission. Let&apos;s raise a generation that is bold enough to care, wise enough to lead, and kind enough to serve.
@@ -765,8 +765,8 @@ export default function Foundation() {
                 </p>
                 <Button
                   onClick={() => {
-                                    const message = "Hi! I&apos;m interested in becoming a sponsor for the Munyaradzwe Foundation. Please provide more information.";
-                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                    const message = "Hi! I&apos;m interested in becoming a sponsor for the Munyaradzwe Foundation. Please provide more information.";
+                    window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                   className="bg-gray-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-gray-800 transition-all duration-200"
                   style={{ boxShadow: 'none' }}
@@ -786,8 +786,8 @@ export default function Foundation() {
                 </p>
                 <Button
                   onClick={() => {
-                                    const message = "Hi! I&apos;d like to learn more about how I can help spread awareness about the Munyaradzwe Foundation.";
-                window.open(`https://wa.me/263123456789?text=${encodeURIComponent(message)}`, '_blank');
+                    const message = "Hi! I&apos;d like to learn more about how I can help spread awareness about the Munyaradzwe Foundation.";
+                    window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                   className="bg-gray-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-gray-800 transition-all duration-200"
                   style={{ boxShadow: 'none' }}
@@ -809,7 +809,7 @@ export default function Foundation() {
           <p className="text-xl text-emerald-200 mb-8 leading-relaxed">
             Together, we can ensure that no one is left behind, and that everyone has the chance to feel comforted, loved, and cared for.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={handleDonation}

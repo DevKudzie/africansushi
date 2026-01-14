@@ -237,7 +237,7 @@ export default function AfricanSushiWear() {
     {
       id: 1,
       name: "Novus Hoodie - Black on White (Face on Hoodie)",
-      price: "$85",
+      price: "$75",
       images: [
         "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie Black on White.jpg"
       ],
@@ -248,7 +248,7 @@ export default function AfricanSushiWear() {
     {
       id: 2,
       name: "Novus Hoodie - Teal on Black (Face on Hoodie)",
-      price: "$85",
+      price: "$75",
       images: [
         "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie Teal on Black.jpg"
       ],
@@ -259,7 +259,7 @@ export default function AfricanSushiWear() {
     {
       id: 3,
       name: "Novus Hoodie - Teal on White (Face on Hoodie)",
-      price: "$85",
+      price: "$75",
       images: [
         "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie Teal on White.jpg"
       ],
@@ -270,7 +270,7 @@ export default function AfricanSushiWear() {
     {
       id: 4,
       name: "Novus Hoodie - White on Black (Face on Hoodie)",
-      price: "$85",
+      price: "$75",
       images: [
         "/images/hoodies/novus-face-on-hoodie-85/Novus Hoodie White on Black.jpg"
       ],
@@ -282,7 +282,7 @@ export default function AfricanSushiWear() {
     {
       id: 5,
       name: "Novus Hoodie - Black on White (Face on Back)",
-      price: "$95",
+      price: "$85",
       images: [
         "/images/hoodies/novus-face-on-back-95/Novus Hoodie Black on White.jpg"
       ],
@@ -293,7 +293,7 @@ export default function AfricanSushiWear() {
     {
       id: 6,
       name: "Novus Hoodie - Teal on Black (Face on Back)",
-      price: "$95",
+      price: "$85",
       images: [
         "/images/hoodies/novus-face-on-back-95/Novus Hoodie Teal on Black.jpg"
       ],
@@ -304,7 +304,7 @@ export default function AfricanSushiWear() {
     {
       id: 7,
       name: "Novus Hoodie - Teal on White (Face on Back)",
-      price: "$95",
+      price: "$85",
       images: [
         "/images/hoodies/novus-face-on-back-95/Novus Hoodie Teal on White.jpg"
       ],
@@ -315,7 +315,7 @@ export default function AfricanSushiWear() {
     {
       id: 8,
       name: "Novus Hoodie - White on Black (Face on Back)",
-      price: "$95",
+      price: "$85",
       images: [
         "/images/hoodies/novus-face-on-back-95/Novus Hoodie White on Black.jpg"
       ],
@@ -449,7 +449,7 @@ export default function AfricanSushiWear() {
                         className="border-zinc-300 text-zinc-700 sharp-edges flex-1"
                         onClick={() => {
                           const message = `Hi! I'm interested in the ${product.name} (${product.price}). Sizes: S M L XL XXL. Delivery: Harare CBD $3; other locations based on distance.`;
-                          window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                          window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                           toast.success('Redirecting to WhatsApp...');
                         }}
                       >
@@ -477,7 +477,7 @@ export default function AfricanSushiWear() {
               className="bg-zinc-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-zinc-700 transition-all duration-200 sharp-edges"
               onClick={() => {
                 const message = "Hi! I'd like to be notified about new African Sushi Wear releases. Please keep me updated!";
-                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
               }}
             >
               Notify Me
@@ -586,7 +586,7 @@ export default function AfricanSushiWear() {
                                     className="border-zinc-300 text-zinc-700 sharp-edges"
                                     onClick={() => {
                                       const message = `Hi! I'm interested in the T‑Shirt: ${item.title} (${price}). Please provide sizes, availability and delivery options.`;
-                                      window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                                      window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                                       toast.success('Redirecting to WhatsApp...');
                                     }}
                                   >

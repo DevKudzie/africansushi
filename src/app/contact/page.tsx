@@ -30,7 +30,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const whatsappMessage = `
 Hi! I'm contacting you through your website.
 
@@ -42,10 +42,10 @@ Subject: ${formData.subject}
 Message: ${formData.message}
     `.trim();
 
-    const whatsappUrl = `https://wa.me/447376712695?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/263784528586?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecting to WhatsApp with your message...');
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -69,7 +69,7 @@ Message: ${formData.message}
               Get in Touch with African Pride
             </p>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              We&apos;re here to help with any questions about our collections, services, or foundation work. 
+              We&apos;re here to help with any questions about our collections, services, or foundation work.
               Reach out to us and let&apos;s start a conversation.
             </p>
           </div>
@@ -87,7 +87,7 @@ Message: ${formData.message}
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-center gap-2 text-stone-700">
                     <Phone className="w-4 h-4" />
-                    <span>+44 7376 712 695</span>
+                    <span>+263 784 528 586</span>
                   </div>
                   <div className="flex items-center justify-center gap-2 text-stone-700">
                     <Mail className="w-4 h-4" />
@@ -105,7 +105,7 @@ Message: ${formData.message}
                   className="bg-zinc-900 text-white font-syne px-6 py-3 tracking-wide hover:bg-amber-600 transition-all duration-200 sharp-edges"
                   onClick={() => {
                     const message = "Hi! I'm interested in learning more about African Pride. Please provide more information about your services.";
-                    window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                    window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                 >
                   Chat on WhatsApp
@@ -153,7 +153,7 @@ Message: ${formData.message}
                         required
                       />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <Input
                         label="Phone (Optional)"
@@ -269,13 +269,13 @@ Message: ${formData.message}
           <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
             Let&apos;s bring your vision to life. Start the conversation today.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-white text-zinc-900 font-syne px-8 py-3 tracking-wide hover:bg-amber-100 transition-all duration-200 sharp-edges"
               onClick={() => {
                 const message = "Hi! I'm interested in learning more about African Pride. Please provide more information about your services.";
-                window.open(`https://wa.me/447376712695?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/263784528586?text=${encodeURIComponent(message)}`, '_blank');
               }}
             >
               Chat on WhatsApp
