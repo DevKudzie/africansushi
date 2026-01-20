@@ -13,6 +13,7 @@ const heroSlides = [
     subtitle: "PRIDE",
     description: "Taste the Vision. Live the Legacy.",
     image: "/images/Model Pics/cut/AS Wear 1.jpg",
+    objectPosition: "center top",
     cta: "Discover Collection",
     href: "/african-sushi-wear"
   },
@@ -20,7 +21,8 @@ const heroSlides = [
     title: "PREMIUM",
     subtitle: "HERITAGE",
     description: "Authentic African craftsmanship meets modern luxury.",
-    image: "/images/Model Pics/cut/AS Wear 2.jpg",
+    image: "/images/new/IMG_5890.JPG",
+    objectPosition: "center 45%",
     cta: "Explore Fabrics",
     href: "/rujeko"
   },
@@ -28,7 +30,8 @@ const heroSlides = [
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Honoring Garry Mapanzure through meaningful impact.",
-    image: "/images/Model Pics/cut/AS Wear 3.jpg",
+    image: "/images/new/IMG_5893.JPG",
+    objectPosition: "center 45%",
     cta: "Support Foundation",
     href: "/foundation"
   }
@@ -59,10 +62,9 @@ export default function Home() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-              index === currentSlide ? 'translate-x-0' : 
+            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${index === currentSlide ? 'translate-x-0' :
               index < currentSlide ? '-translate-x-full' : 'translate-x-full'
-            }`}
+              }`}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -70,7 +72,8 @@ export default function Home() {
                 src={slide.image}
                 alt={slide.title}
                 fill
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: slide.objectPosition }}
                 priority={index === 0}
               />
               {/* Enhanced Overlay */}
@@ -129,9 +132,8 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-12 h-1 transition-all sharp-edges ${
-                index === currentSlide ? 'bg-pearl' : 'bg-pearl/40'
-              }`}
+              className={`w-12 h-1 transition-all sharp-edges ${index === currentSlide ? 'bg-pearl' : 'bg-pearl/40'
+                }`}
             />
           ))}
         </div>
@@ -150,7 +152,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-manrope text-xl text-stone leading-relaxed">
-                  African Pride is more than a brand—it&apos;s a <strong>movement</strong> that celebrates African heritage, 
+                  African Pride is more than a brand—it&apos;s a <strong>movement</strong> that celebrates African heritage,
                   creativity, and the power of giving back. Born from the vision of <em>Garry Mapanzure</em>.
                 </p>
               </div>
@@ -245,13 +247,13 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            
+
             <div className="premium-card sharp-edges p-8 bg-mist h-80 flex flex-col">
               <h3 className="font-syne text-2xl font-bold text-charcoal mb-4">
                 Munyaradzwe <em className="font-manrope">Foundation</em>
               </h3>
               <p className="font-manrope text-stone mb-6 leading-relaxed flex-grow">
-                &ldquo;<strong>Be Comforted</strong>&rdquo; — Our charity foundation spreads comfort and support to the 
+                &ldquo;<strong>Be Comforted</strong>&rdquo; — Our charity foundation spreads comfort and support to the
                 most vulnerable members of our community.
               </p>
               <Button
@@ -281,15 +283,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            
+
             <div className="premium-card sharp-edges p-8 bg-charcoal text-pearl h-64 flex flex-col justify-center">
               <blockquote className="font-syne text-base lg:text-lg font-light mb-4 leading-relaxed italic">
                 &ldquo;True success is measured not just by what we achieve, but by how many lives we touch along the way.&rdquo;
               </blockquote>
               <cite className="font-manrope text-xs text-pearl/70">— African Pride Philosophy</cite>
             </div>
-            
-            
+
+
             <div className="premium-card sharp-edges h-64 relative overflow-hidden group">
               <Image
                 src="/images/1200x630bb.jpg"

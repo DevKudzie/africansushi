@@ -110,21 +110,24 @@ const heroSlides = [
     title: "PREMIUM",
     subtitle: "STREETWEAR",
     description: "Crafted for comfort, culture, and expression.",
-    image: "/images/Model Pics/cut/AS Wear 2.jpg",
+    image: "/images/new/IMG_5887.JPG",
+    objectPosition: "center 45%",
     cta: "Shop Collection"
   },
   {
     title: "LEGACY",
     subtitle: "CONTINUES",
     description: "Heritage and style, designed for today.",
-    image: "/images/Model Pics/cut/AS Wear 3.jpg",
+    image: "/images/new/IMG_5880.JPG",
+    objectPosition: "center 45%",
     cta: "Shop Collection"
   },
   {
     title: "AFRICAN",
     subtitle: "SUSHI WEAR",
     description: "Premium streetwear. Taste the Vision. Live the Legacy.",
-    image: "/images/Model Pics/cut/AS Wear 1.jpg",
+    image: "/images/new/IMG_5892.JPG",
+    objectPosition: "center 45%",
     cta: "Shop Collection"
   }
 ];
@@ -336,7 +339,7 @@ export default function AfricanSushiWear() {
           <div
             key={index}
             className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${index === modelIndex ? 'translate-x-0' :
-                index < modelIndex ? '-translate-x-full' : 'translate-x-full'
+              index < modelIndex ? '-translate-x-full' : 'translate-x-full'
               }`}
           >
             {/* Background Image */}
@@ -345,7 +348,8 @@ export default function AfricanSushiWear() {
                 src={slide.image}
                 alt={slide.title}
                 fill
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: slide.objectPosition }}
                 priority={index === 0}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-charcoal/40 to-charcoal/20" />
@@ -533,22 +537,22 @@ export default function AfricanSushiWear() {
                 const filteredItems = cat.items.filter(item => {
                   const price = getTshirtPrice(item.title);
                   const priceValue = parseInt(price.replace('$', ''));
-                  
+
                   // Search filter
                   if (searchQuery && !item.title.toLowerCase().includes(searchQuery.toLowerCase())) {
                     return false;
                   }
-                  
+
                   // Garment type filter
                   if (garmentType !== "All" && garmentType !== "T-Shirts") {
                     return false;
                   }
-                  
+
                   // Price filter
                   if (priceFilter !== "All" && priceValue !== parseInt(priceFilter)) {
                     return false;
                   }
-                  
+
                   return true;
                 });
 
@@ -604,13 +608,13 @@ export default function AfricanSushiWear() {
               })
               .filter(Boolean) // Remove null entries from categories with no items
             }
-            
+
             {/* No results message */}
             {tshirtCategories.every(cat => {
               const filteredItems = cat.items.filter(item => {
                 const price = getTshirtPrice(item.title);
                 const priceValue = parseInt(price.replace('$', ''));
-                
+
                 if (searchQuery && !item.title.toLowerCase().includes(searchQuery.toLowerCase())) {
                   return false;
                 }
@@ -627,26 +631,26 @@ export default function AfricanSushiWear() {
               });
               return filteredItems.length === 0;
             }) && (
-              <div className="text-center py-16">
-                <div className="bg-zinc-100 rounded-lg p-8 max-w-md mx-auto">
-                  <h3 className="font-syne text-xl font-bold text-zinc-700 mb-4">No T-Shirts Found</h3>
-                  <p className="text-zinc-600 mb-6">
-                    No products match your current filters. Try adjusting your search or filter criteria.
-                  </p>
-                  <Button
-                    className="bg-zinc-900 text-white font-syne px-6 py-2 sharp-edges"
-                    onClick={() => {
-                      setSearchQuery("");
-                      setSelectedCategory("All");
-                      setGarmentType("All");
-                      setPriceFilter("All");
-                    }}
-                  >
-                    Clear All Filters
-                  </Button>
+                <div className="text-center py-16">
+                  <div className="bg-zinc-100 rounded-lg p-8 max-w-md mx-auto">
+                    <h3 className="font-syne text-xl font-bold text-zinc-700 mb-4">No T-Shirts Found</h3>
+                    <p className="text-zinc-600 mb-6">
+                      No products match your current filters. Try adjusting your search or filter criteria.
+                    </p>
+                    <Button
+                      className="bg-zinc-900 text-white font-syne px-6 py-2 sharp-edges"
+                      onClick={() => {
+                        setSearchQuery("");
+                        setSelectedCategory("All");
+                        setGarmentType("All");
+                        setPriceFilter("All");
+                      }}
+                    >
+                      Clear All Filters
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </div>
       </section>
