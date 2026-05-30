@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
  * SET THIS TO TRUE TO SUSPEND THE WEBSITE
  * Toggle this back to false to restore the site.
  */
-const IS_SUSPENDED = true;
+const IS_SUSPENDED = false;
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
